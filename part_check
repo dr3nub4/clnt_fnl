@@ -1,0 +1,369 @@
+****************************************************************************************
+=IF(COUNTIF([dim_customer_specification.xlsx]Sheet1!$C:$C,B4)>0,"F","NF")
+****************************************************************************************
+
+# ==============================================  AMLA ==========================================================
+
+#	Field	Table	Source Column	Reference Mapping	Allowed Values	Source	F - NF
+1	account_number	GL_AD_ACCOUNTS	IBAN_CODE_BK			FLEXCUBE	NF
+2	account_status	GL_AD_ACCOUNTS	STATUS_RID	GL_AD_TYPES.TYPE_SNM	Blocked | Inactive | Liquidated | Live | Terminated	FLEXCUBE 	NF
+3	aml_address_type	GL_BR_ADDRESS	TYPE_RID	GL_AD_TYPES.TYPE_SNM	Headquarters | Permanent address | Residence address	FLEXCUBE	NF
+4	country_of_address	GL_AD_ADDRESSES	COUNTRY_RID	GL_AD_TYPES.TYPE_SNM	ISO country codes | Stateless	FLEXCUBE	F
+5	virtual_office	GL_BR_ADDRESS	SERVICED_ADDRESS_FL			N/A	F
+6	contract_id	GL_AD_CONTRACTS	CONTRACT_NUMBER_BK			FLEXCUBE	F
+7	contract_status	GL_AD_CONTRACTS	CMP_STATUS_RID	GL_AD_TYPES.TYPE_SNM	Active | Begun | Terminated - by bank | Terminated - by the customer	FLEXCUBE	NF
+8	date_of_contract_creation	GL_AD_CONTRACTS	CONTRACT_SIGN_DT			FLEXCUBE	NF
+9	aml_client_role_type	GL_BR_CUSTOMER_TO_CONTRACTS	CMP_ROLE_TYPE_RID	GL_AD_TYPES.TYPE_SNM	Authorised person | Co-debtor | Co-owner | Debtor | Primary owner | Proxy	Flexcube	F
+10	admin_of_periodic_review	GL_AD_CUSTOMER_QUESTIONNAIRE	PERIODIC_REVIEW_REP_ID	GL_BR_CUSTOMER_TO_REPRESENTATIVE -> GL_AD_REPRESENTATIVES		FLEXCUBE	NF
+11	KYC_questionnaire_compl_date	GL_AD_CUSTOMER_QUESTIONNAIRE	KYC_QUESTIONNAIRE_DT			FLEXCUBE	F
+12	KYC_questionnaire_open_date	GL_AD_CUSTOMER_QUESTIONNAIRE	OPEN_KYC_QUESTIONNAIRE_DT			FLEXCUBE	F
+13	KYC_questionnaire_status	GL_AD_CUSTOMER_QUESTIONNAIRE	KYC_QUESTIONNAIRE_STATUS_RID	GL_AD_TYPES.TYPE_SNM	Deleted | Valid	FLEXCUBE	F
+14	KYC_questionnaire_substatus	GL_AD_CUSTOMER_QUESTIONNAIRE	KYC_QUESTIONNAIRE_SUBSTATUS_RID	GL_AD_TYPES.TYPE_SNM	Awaiting permission | Draft | Final | Rejected	FLEXCUBE	F
+15	KYC_questionnaire_type	GL_AD_CUSTOMER_QUESTIONNAIRE	KYC_QUESTIONNAIRE_TYPE_RID		New customer KYC | Periodic KYC	FLEXCUBE	F
+16	active_cust	GL_AD_CUSTOMERS	AML_ACTIVE_FL			FLEXCUBE	F
+17	aml_fatf_flag	GL_AD_CUSTOMERS	FATF_COUNTRY_FL			0	F
+18	aml_high_risk_country_flag	GL_AD_CUSTOMERS	AML_HIGH_RISK_COUNTRY_FL			FLEXCUBE	F
+19	client_cecil_id	GL_AD_CUSTOMERS	MAIN_CUSTOMER_SOURCE_ID_BK			FLEXCUBE	F
+20	client_creation_date	GL_AD_CUSTOMERS	FIRST_OPENING_DT			FLEXCUBE	F
+21	client_gwb_id	GL_BR_CUSTOMER_TO_IDS	CUSTOMER_KEY_DSC			ODM?	NF
+22	client_status	GL_AD_CUSTOMERS	CMP_STATUS_RID	GL_AD_TYPES.TYPE_SNM	Accepted | In progress of acceptance | Rejected | Request for additional documents from the customer | Under registration	Flexcube	F
+23	legal_form_type	GL_AD_CUSTOMERS	LEGAL_FORM_TYPE_RID	GL_AD_TYPES.TYPE_SNM	Organization | Private entrepreneur | Private individual	0	F
+24	date_of_death	GL_AD_CUSTOMERS	DECEASED_DT			Flexcube	F
+25	date_of_periodic_review	GL_AD_CUSTOMERS	PERIODIC_REVIEW_DT			FLEXCUBE	NF
+26	due_date_of_periodic_review	GL_AD_CUSTOMERS	PERIODIC_REVIEW_DUE_DT			0	NF
+27	KYC_questionnaire_fl	GL_AD_CUSTOMERS	KYC_QUESTIONNAIRE_FL			Flexcube	F
+28	kyc_risk_score	GL_AD_CUSTOMERS	KYC_RISK_SCORE_NUM			FLEXCUBE	F
+29	masking_date	GL_AD_CUSTOMERS	MASKING_DT			N/A	F
+30	nationality	GL_AD_CUSTOMERS	NATIONALITY_RID	GL_AD_TYPES.TYPE_SNM	ISO country codes | Stateless	FLEXCUBE	F
+31	offboarding_date	GL_AD_CUSTOMERS	OFFBOARDING_DT			FLEXCUBE	F
+32	offboarding_initiator	GL_AD_CUSTOMERS	OFFBOARDING_INIT_ORG_RID		AML | FIU | KYC	N/A	F
+33	offboarding_type	GL_AD_CUSTOMERS	OFFBOARDING_TYPE_RID	GL_AD_TYPES.TYPE_SNM	Immediate | On notice	N/A	F
+34	PEP	GL_AD_CUSTOMERS	SENSITIVE_CUSTOMER_FL			FLEXCUBE	F
+35	reason_for_offboarding	GL_AD_CUSTOMERS	OFFBOARDING_REASON_DSC			0	F
+36	relevant_customer	GL_AD_CUSTOMERS	AML_RELEVANT_FL			NO Info 	F
+37	risk_category	GL_AD_CUSTOMERS	CMP_RISK_CATEGORY_RID	GL_AD_TYPES.TYPE_SNM	High | Low | Medium	FLEXCUBE	F
+38	risk_score	GL_AD_CUSTOMERS	CMP_RISK_SCORE_NUM			FLEXCUBE	F
+39	secondary_nationality	GL_AD_CUSTOMERS	SECONDARY_NATIONALITY_RID		ISO country codes | Stateless	0	F
+40	segment	GL_AD_CUSTOMERS	AML_SEGMENT_RID		MLE | MSE | Municipality | Natural person mass | Natural person PB | Other	FLEXCUBE	F
+41	third_party	GL_BR_CUSTOMER_TO_PARTNER	ROLE_TYPE_RID		Beneficial owner | Representative	N/A	F
+42	aml_client_role_type (representative)	GL_BR_CUSTOMER_TO_REPRESENTATIVE	RELATION_TYPE_RID	GL_AD_TYPES.TYPE_SNM	Beneficial owner | Representative	0	NF
+43	amount	GL_AG_CUSTOMER_TRANSACTIONS	SUM_TRANSACTION_AMOUNT_EUR_AMT			FLEXCUBE	NF
+44	country_code	GL_AG_CUSTOMER_TRANSACTIONS	COUNTERPARTY_COUNTRY_RID		ISO2 country code	FLEXCUBE	NF
+45	direction	GL_AG_CUSTOMER_TRANSACTIONS	TRANSACTION_DIRECTION_RID		Credit | Debit	FLEXCUBE	NF
+46	number	GL_AG_CUSTOMER_TRANSACTIONS	SUM_TRANSACTION_NUM			Flexcube	NF
+47	original_currency	GL_AG_CUSTOMER_TRANSACTIONS	TRANSACTION_CURRENCY_RID		ISO3 currency code	FLEXCUBE	NF
+48	reporting_date	GL_AG_CUSTOMER_TRANSACTIONS	REPORTING_DT			Flexcube	NF
+49	transaction_category	GL_AG_CUSTOMER_TRANSACTIONS	TRANSACTION_CATEGORY_RID		ATM Transaction | Bulk Cash Deposit | Card Purchase | Cash Transaction | Check Transaction | Deposit | Inter-bank Transfer | Intra-bank Transfer | Loan Transaction | Securities Transaction	0	NF
+50	corporate_risk	GL_AD_GEOGRAPHICS	CTRY_CMP_CORP_RISK_RID		Extremely high | Forbidden | High | Low | Medium	FLEXCUBE	NF
+51	correspondent_banking_risk	GL_AD_GEOGRAPHICS	CTRY_CMP_CORR_BANK_RISK_RID		Extremely high | Forbidden | High | Low | Medium	NORKOM	F
+52	country_name	GL_AD_GEOGRAPHICS	ISO_COUNTRY_NAME_TXT			FLEXCUBE	NF
+53	EEA	GL_AD_GEOGRAPHICS	EEA_MEMBER_FL			0	NF
+54	EU	GL_AD_GEOGRAPHICS	EU_MEMBER_FL			0	NF
+55	fatf_country_flag	GL_AD_GEOGRAPHICS	FATF_COUNTRY_FL			NORKOM	F
+56	offshore	GL_AD_GEOGRAPHICS	OFFSHORE_FL			0	F
+57	region	GL_AD_GEOGRAPHICS	CMP_GEO_REGION_RID		Africa | Asia | Central America | Europe | North America | Oceania | South America | Unknown	0	NF
+58	residential_risk	GL_AD_GEOGRAPHICS	CTRY_CMP_RESIDENTAL_RISK_RID		Extremely high | Forbidden | High | Low | Medium	FLEXCUBE	F
+59	state	GL_AD_GEOGRAPHICS	STATE_RID		Alabama | Alaska | Arizona | Arkansas | California | Colorado | Connecticut | Delaware | Florida | Georgia | Hawaii | Idaho | Illinois | Indiana | Iowa | Kansas | Kentucky | Louisiana | Maine | Maryland | Massachusetts | Michigan | Minnesota | Mississippi | Missouri | Montana | Nebraska | Nevada | New Hampshire | New Jersey | New York | New-Mexico | North-Carolina | North-Dakota | Ohio | Oklahoma | Oregon | Pennsylvania | Rhode Island | South-Carolina | South-Dakota | Tennessee | Texas | Utah | Vermont | Virginia | Washington | West-Virginia | Wisconsin | Wyoming	NO Info 	F
+60	date_of_sanction_alert_creation	GL_AD_SANCTION_DETECTIONS_DET	ALERT_DT			SWIFT SANCTION TRANSACTION	NF
+61	sanction_alert_activity	GL_AD_SANCTION_DETECTIONS_DET	SANCTION_ALERT_ACTIVITY_RID	GL_AD_TYPES.TYPE_SNM	Alert Assignment | Alert Block | Alert Block - Reason Code | Alert comment has been added | Alert has been assigned | Alert Release | Alert status changed | Alert status is changed. | An attachment has been added to this Alert | New | Note creation | Reason Code has been added	SWIFT SANCTION TRANSACTION	NF
+62	sanction_alert_activity_comment	GL_AD_SANCTION_DETECTIONS_DET	SANCTION_NOTE_NAR			SWIFT SANCTION TRANSACTION	NF
+63	sanction_alert_identifier	GL_AD_SANCTION_DETECTIONS_DET	SANCTION_ALERT_BK			SWIFT SANCTION TRANSACTION	NF
+64	sanction_alert_status	GL_AD_SANCTION_DETECTIONS_DET	SANCTION_ALERT_STATUS_RID	GL_AD_TYPES.TYPE_SNM	Dont know | False Positive | Investigating | New | Pending | Real Violation	SWIFT SANCTION TRANSACTION	NF
+65	client_identifier	GL_AD_CUSTOMERS	SOURCE_ID_BK	GL_AD_SANCTION_DETECTIONS -> GL_AD_CUSTOMERS		0	NF
+66	date_of_detection_creation	GL_AD_SANCTION_DETECTIONS	DETECTION_CREATION_DT			SWIFT SANCTION TRANSACTION	NF
+67	detection_identifier	GL_AD_SANCTION_DETECTIONS	MAIN_DETECTION_SOURCE_ID_BK			SWIFT SANCTION TRANSACTION	NF
+68	status_of_detection	GL_AD_SANCTION_DETECTIONS	DETECTION_STATUS_RID	GL_AD_TYPES.TYPE_SNM	Dont know | False Positive | Investigating | New | Pending | Real Violation	SWIFT SANCTION TRANSACTION	NF
+69	transaction_identifier	GL_AF_TRANSACTIONS	SOURCE_ID_BK	GL_AD_SANCTION_DETECTIONS -> GL_AF_TRANSACTIONS		SWIFT SANCTION TRANSACTION	NF
+70	Status (suspended)	GL_AD_SUSPENDED_TRANSACTIONS	REVIEW_STATUS_RID		Blocked | Rejected | Released | Started	0	NF
+71	end_date	GL_AD_SUSPENDED_TRANSACTIONS	REVIEW_END_DT			SWIFT SANCTION TRANSACTION	NF
+72	start_date	GL_AD_SUSPENDED_TRANSACTIONS	REVIEW_START_DT			SWIFT SANCTION TRANSACTION	NF
+73	alert_account_number	GL_AD_ACCOUNTS	ACCOUNT_NUMBER_BK	GL_AD_TRANSACTION_ALERTS -> GL_AD_ACCOUNTS		SWIFT SANCTION TRANSACTION	NF
+74	alert_check_name	GL_AD_TRANSACTION_ALERTS	ALERT_CHCK_NAME_RID	GL_AD_TYPES.TYPE_SNM	EU | JMETI-WMD | JMOF | OFAC | OFAC-NONSDN | UKHMT | UN | WLM Blacklist | WORLDCHECK	0	NF
+75	alert_creation_date	GL_AD_TRANSACTION_ALERTS	ALERT_CREATION_DT			NORKOM	NF
+76	alert_customer_id	GL_AD_CUSTOMERS	MAIN_CUSTOMER_SOURCE_ID_BK			NORKOM	NF
+77	alert_first_reason	GL_AD_TRANSACTION_ALERTS	FIRST_REASON_DSC			NORKOM	NF
+78	alert_identifier	GL_AD_TRANSACTION_ALERTS	SOURCE_ID_BK			NORKOM	NF
+79	alert_source_system	GL_AD_TRANSACTION_ALERTS	CHANNEL_SOURCE_SYSTEM_RID	GL_AD_TYPES.TYPE_SNM	Manual | SM | WLMBATCH | WLMRT	NORKOM	NF
+80	alert_status_name	GL_AD_TRANSACTION_ALERTS	ALERT_STATUS_RID	GL_AD_TYPES.TYPE_SNM	Other | S_AML_AL_001 - Triage | S_AML_AL_002 - Closed Suspicious | S_AML_AL_003 - Closed Non Suspicious | S_AML_AL_005 - False Positive | S_AML_AL_006 - SAR30 | S_AML_AL_007 - Investigated | S_EIM_AL_002 - Linked | S_EIM_AL_003 - Closed | S_EIM_AL_004 - New | S_EIM_AL_005 - Linked Closed | S_EIM_CA_001 - Under Investigation | S_EIM_CA_002 - Reported | S_EIM_CA_009 - Validation | S_WLM_WL_019 - Closed By System	NORKOM	NF
+81	reported_date	GL_AD_TRANSACTION_ALERTS	REPORTED_DT			Restricted	NF
+82	reported_fl	GL_AD_TRANSACTION_ALERTS	REPORTED_FL			Restricted	NF
+83	SOF_fl	GL_AD_TRANSACTION_ALERTS	SOF_FL			More info.	NF
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+# ==============================================  CLNDB ==========================================================
+
+
+DOM	FIELD	B-R-NR	F-NF
+CLNDB	CLIENT_ID	B	F
+CLNDB	CLIENT_BUSINESS_SEGMENT	B	F
+CLNDB	CLIENT_BASEL_SEGMENT	B	F
+CLNDB	CLIENT_COUNTRY_CODE	B	F
+CLNDB	LEGAL_FORM	B	F
+CLNDB	SALARY_TRANSFER_INDICATOR	R	F
+CLNDB	ANNUAL_INCOME	R	F
+CLNDB	CLIENT_GENDER	R	F
+CLNDB	YEAR_OF_BIRTH	R	F
+CLNDB	REGISTERED_CITY_POSTAL_CODE	R	F
+CLNDB	INTERNETBANK_CONTRACT_INDICATOR	B	F
+CLNDB	INTERNETBANK_ONBOARDING_INDICATOR	B	F
+CLNDB	INTERNTEBANK_ACTIVITY_INDICATOR	R	F
+CLNDB	INTERNETBANK_TRANSACTION_INDICATOR	B	F
+CLNDB	MOBILE_BANK_SERVICE_INDICATOR	B	F
+CLNDB	MOBILE_BANK_ACTIVATION_INDICATOR	B	F
+CLNDB	MOBILE_BANK_ACTIVITY_INDICATOR	B	F
+CLNDB	MOBILE_BANK_TRANSACTION_INDICATOR	B	F
+CLNDB	CONTROLL_SMS_SERVICE_INDICATOR	R	F
+CLNDB	CALL_CENTER_SERVICE_INDICATOR	R	F
+CLNDB	TRANSACTIONAL_ACTIVITY_INDICATOR	B	F
+CLNDB	FINREP_SECTOR	B	F
+CLNDB	FOUNDATION_CLIENT	R	F
+CLNDB	MONTH_OF_BIRTH	R	F
+CLNDB	Client_type	B	F
+CLNDB	DATE_OF_CLIENT_OPENING	R	F
+CLNDB	DATE_OF_VERIFICATION_FOR_PERSONAL_DETAILS	R	F
+CLNDB	Employment Status	R	F
+CLNDB	OCCUPATION_TYPE	R	F
+CLNDB	CLIENT_NAME	NR	F
+CLNDB	NON_RETAIL_CLIENT_LIMIT	NR	F
+CLNDB	NON_RETAIL_CLIENT_LIMIT_CURRENCY	NR	F
+CLNDB	TAX_IDENTIFICATION_NUMBER	NR	F
+CLNDB	EBITDA	NR	F
+CLNDB	TOTAL_ASSETS	NR	F
+CLNDB	TOTAL_EQUITY	NR	F
+CLNDB	TURNOVER	NR	F
+CLNDB	NUMBER_OF_EMPLOYEES	NR	F
+CLNDB	BANKRUPTCY_INDICATOR	NR	F
+CLNDB	LIQUIDATION_INDICATOR	NR	F
+CLNDB	PROMPT_COLLECTION_ORDER_INDICATOR	NR	F
+CLNDB	INDIVIDUAL_ASSESSMENT_INDICATOR	NR	F
+CLNDB	FITCH_RATING	NR	F
+CLNDB	MOODYS_RATING	NR	F
+CLNDB	STANDARD_AND_POORS_RATING	NR	F
+CLNDB	CONSOLIDATION_ID	NR	F
+CLNDB	NUMBER_OF_BUNDLE_PRODUCT	NR	F
+CLNDB	POS_TERMINAL_SERVICE_INDICATOR	NR	F
+CLNDB	LEI_CODE	NR	F
+CLNDB	PRE_FILTERING_RESULT_TYPE	NR	F
+CLNDB	ESG_CLIENT_RISK_CATEGORY	NR	F
+CLNDB	Date of incorporation	NR	F
+CLNDB	Description	NR	F
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+# ==============================================  REV  ==========================================================
+
+
+Data Point	Definition	F-NF		Table Map	Field Map	Comments	COBI	COBI Name	DB	status	
+Client ID Type	Unique ID of Client Mapping	F	CLIENT				N				
+Customer Type	Customer Type from CBS	F	CLIENT				N				
+CUSTOMER CATEGORY Code	Customer Category Code from CBS	F	CATEGORY								
+Customer Segment Group Code	Customer Segment Group Code	NF	CATEGORY								
+active	If Customer Is Active	F					Y	ACTIVE NON RETAIL CLIENT INDICATOR	CLNDB		
+ANNUAL INCOME	The last available best estimate about the annual income of the retail client in LCY.	F	TRANSACTIONS				Y	ANNUAL INCOME	CLNDB		
+BANKRUPTCY INDICATOR	Indicates if any bankruptcy is imposed against the client	F	PRODUCT				Y	BANKRUPTCY INDICATOR	CLNDB		
+CALL CENTER SERVICE INDICATOR	"Indicator that defines whether the client has call center service, i.e. is capable to initiate transaction via call center. 
+
+For the exact list of the kind of transactions that are included in the definition, please see 'Transactional activity indicator' under the Related definitions section."	F	PRODUCT				Y	CALL CENTER SERVICE INDICATOR	CLNDB		
+NACE CODE	NACE	F	CLIENT				Y	CLIENT ACTIVITY CODE	CLNDB		
+CLIENT BASEL SEGMENT		F	CATEGORY				Y	CLIENT BASEL SEGMENT	CLNDB		
+CLIENT BUSINESS SEGMENT		F	CATEGORY				Y	CLIENT BUSINESS SEGMENT	CLNDB		
+CLIENT COUNTRY RESIDENCE CODE	Residence/Address country	F	CLIENT	AMLClientDatabase	COUNTRY_OF_RESIDENCE (ISO CODE)		Y	CLIENT COUNTRY CODE	CLNDB		
+CLIENT GENDER	Identifies the client’s state of being male or female. Available only for Retail clients.	F	CLIENT				Y	CLIENT GENDER	CLNDB		
+CLIENT ID	Unique identifier of the depositor or debtor	NF	CLIENT				Y	CLIENT ID	CLNDB		!
+	Main category of clients	NF	CATEGORY				Y	CLIENT TYPE	CLNDB		customer_category_code
+CONSOLIDATION ID	"Consolidation code of the client, should be filled for group members only. Unique identification of OTP Bank and it's affiliates included in accounting consolidation.
+Should be filled only for clients involved in consolidation."	F	CLIENT/OUT				Y	CONSOLIDATION ID	CLNDB		
+CONTROLL SMS SERVICE INDICATOR	"Indicator that defines whether the client has controll SMS service, i.e. is capable to initiate transaction via SMS. 
+
+For the exact list of the kind of transactions that are included in the definition, please see 'Transactional activity indicator' under the Related definitions section"	F	PRODUCT				Y	CONTROLL SMS SERVICE INDICATOR	CLNDB		
+Creation date of the company	Creation date of the company	F	CLIENT	[CorpFATCAClientsBal]	date_of_incorporation		Y	Date of Incorporation	CLNDB		
+Creation country of the company	Creation country of the company	F	CLIENT	[CorpFATCAClientsBal]	Country_of_Incorporation						
+Date of Verification for Personal Details		F	CLIENT				Y	Date of Verification for Personal Details	CLNDB		
+Creation Date	date creation of cif	F	CLIENT	FCC.STTM_CUSTOMER	cif_creation_date		Y	DATE OF CLIENT OPENING	CLNDB		
+Description		F	CLIENT				Y	Description	CLNDB		
+EBITDA	"The client’s last available fiscal year’s EBITDA in LCY. There is no group standard regarding the calculation of EBITDA, local values should be reported by the subsidiaries.
+ "	F	TRANSACTIONS				Y	EBITDA	CLNDB		
+Employment Status		F	CLIENT				Y	Employment Status	CLNDB		
+ESG CLIENT RISK CATEGORY		F	PRODUCT				Y	ESG CLIENT RISK CATEGORY	CLNDB		
+FINREP SECTOR	"FINREP counterparty breakdown according to Regulation (EU) No. 680/2014 of the European Commission of 16 April 2014 Part I. 35.
+
+COUNTERPARTY BREAKDOWN
+(a) central banks; 
+(b) general governments: central governments, state or regional governments, and local governments, including administrative bodies and non-commercial undertakings, but excluding public companies and private companies held by these administrations that have a commercial activity (which shall be reported under ‘credit institutions’, ‘other financial corporations’ or ‘non-financial corporations’ depending on their activity); social security funds; and international organisations, such as the European Community, the International Monetary Fund and the Bank for International Settlements; 
+(c) credit institutions: any institution covered by the definition in Article 4(1)(1) of CRR (‘undertaking the business of which is to take deposits or other repayable funds from the public and to grant credits for its own account’) and multilateral development banks (MDBs); 
+(d) other financial corporations: all financial corporations and quasi-corporations other than credit institutions such as investment firms, investment funds, insurance companies, pension funds, collective investment undertakings, and clearing houses as well as remaining financial intermediaries, financial auxiliaries and captive financial institutions and money lenders; 
+(e) non-financial corporations: corporations and quasi-corporations not engaged in financial intermediation but principally in the production of market goods and non-financial services according to the ECB BSI Regulation; 
+(f) households: individuals or groups of individuals as consumers and producers of goods and non-financial services exclusively for their own final consumption, and as producers of market goods and non-financial and financial services provided that their activities are not those of quasi-corporations. Non-profit institutions which serve households (‘NPISH’) and which are principally engaged in the production of non-market goods and services "	F					Y	FINREP SECTOR	CLNDB		
+FITCH RATING	"Fitch External Credit Assessment Institutions (ECAI) long term rating of the clients, guarantors, funded credit protection issuers which have external credit rating and belong to one of the following segment:
+- regional governments or local authorities not treated as central government,
+- public sector entities,
+- multilateral development banks,
+- institutions, central counterparties with external rating,
+- corporates."	F					Y	FITCH RATING	CLNDB		
+FOUNDATION CLIENT		F					Y	FOUNDATION CLIENT	CLNDB		
+INDIVIDUAL ASSESSMENT INDICATOR	"Indicator that shows whether the client's exposure should be assessed on an individual basis.
+As a group policy, indicator should be ""Yes"" for non-retail clients if the total exposure of the client / client group is above 0,4 M EUR, or above 1 M EUR for clients financed only with standardized products. Lower local practice is allowed if the new threshold covers at least 80% of the portfolio; indicator should be ""Yes"" for these clients as well. In any other cases, indicator should be ""No"".
+When calculating the threshold, exposure reported in the BS (on gross amortized cost / fair value loans), and exposure reported amongst the off-balance items (such as guarantees and unused credit lines) should be considered together. In case of a partial write-off, the gross exposure should be considered. In case of a full write-off, volumes should be omitted from the calculation."	F	PRODUCT				Y	INDIVIDUAL ASSESSMENT INDICATOR	CLNDB		
+INTERNEBANK ACTIVITY INDICATOR		NF	PRODUCT				Y	INTERNEBANK ACTIVITY INDICATOR	CLNDB		
+INTERNETBANK CONTRACT INDICATOR	Indicator, which defines, whether the clients requested/have internet bank contract. 	F	PRODUCT				Y	INTERNETBANK CONTRACT INDICATOR	CLNDB		
+INTERNETBANK ONBOARDING INDICATOR		F	PRODUCT				Y	INTERNETBANK ONBOARDING INDICATOR	CLNDB		
+INTERNETBANK TRANSACTION INDICATOR		F	PRODUCT				Y	INTERNETBANK TRANSACTION INDICATOR	CLNDB		
+INTERNTEBANK ACTIVITY INDICATOR		F	PRODUCT				Y	INTERNTEBANK ACTIVITY INDICATOR	CLNDB		
+LEGAL FORM	LEGAL FORM	F	CLIENT				Y	LEGAL FORM	CLNDB		
+LEI CODE	Legal Entity Identifier	F	CLIENT/OUT				Y	LEI CODE	CLNDB		
+LIQUIDATION INDICATOR	Indicates if the client is going into liquidation or at the state of being liquidated.	F	PRODUCT				Y	LIQUIDATION INDICATOR	CLNDB		
+LOCAL CLIENT GROUP ID	"Unique identifier of the client group on local level, based on the group-level Risk Assumption Regulation.
+To be filled only for clients that are part of a local client group. Can be filled for retail clients as well, in accordance with the RAR."	F	CLIENT				Y	LOCAL CLIENT GROUP ID	CLNDB		
+LOCAL CLIENT GROUP LIMIT		F					Y	LOCAL CLIENT GROUP LIMIT	CLNDB		
+LOCAL CLIENT GROUP LIMIT END DATE		F					Y	LOCAL CLIENT GROUP LIMIT END DATE	CLNDB		
+LOCAL CLIENT GROUP NAME		F					Y	LOCAL CLIENT GROUP NAME	CLNDB		
+LOCAL GROUPING CRITERIA		F					Y	LOCAL GROUPING CRITERIA	CLNDB		
+MOBILE BANK ACTIVATION INDICATOR		F	PRODUCT				Y	MOBILE BANK ACTIVATION INDICATOR	CLNDB		
+MOBILE BANK ACTIVITY INDICATOR		F	PRODUCT				Y	MOBILE BANK ACTIVITY INDICATOR	CLNDB		
+MOBILE BANK SERVICE INDICATOR	Indicator, which defines whether the client requested/have mobile bank service. 	F	PRODUCT				Y	MOBILE BANK SERVICE INDICATOR	CLNDB		
+MOBILE BANK TRANSACTION INDICATOR		F	PRODUCT				Y	MOBILE BANK TRANSACTION INDICATOR	CLNDB		
+MONTH OF BIRTH		F	CLIENT				Y	MONTH OF BIRTH	CLNDB		
+MONTHLY OTHER INCOME TRANSFER VALUE		NF	TRANSACTIONS				Y	MONTHLY OTHER INCOME TRANSFER VALUE	CLNDB		
+MONTHLY PENSION TRANSFER VALUE		NF	TRANSACTIONS				Y	MONTHLY PENSION TRANSFER VALUE	CLNDB		
+MONTHLY SALARY TRANSFER VALUE		NF	TRANSACTIONS				Y	MONTHLY SALARY TRANSFER VALUE	CLNDB		
+MOODYS RATING		NF	PRODUCT				Y	MOODYS RATING	CLNDB		
+NUMBER OF BUNDLE PRODUCT		F	PRODUCT				Y	NUMBER OF BUNDLE PRODUCT	CLNDB		
+NUMBER OF EMPLOYEES	The client’s last available fiscal year’s statistics on the number of its employees (closing data if available). Count of the employees in the given reporting period.	F	CLIENT				Y	NUMBER OF EMPLOYEES	CLNDB		
+		NF	TRANSACTIONS				Y	NUMBER OF TRANSACTIONS	CLNDB		
+Occupation Type		F					Y	Occupation Type	CLNDB		
+POS TERMINAL SERVICE INDICATOR	0	F					Y	POS TERMINAL SERVICE INDICATOR	CLNDB		
+PRE FILTERING RESULT TYPE		F					Y	PRE FILTERING RESULT TYPE	CLNDB		
+PROMPT COLLECTION ORDER INDICATOR	"With a prompt collection order indicator the entitled party indicates whether the credit institution of the obligor is ordered to collect a specific amount from the obligor’s current account. The credit institution shall accept and perform the prompt collection order if the obligor (as account holder) previously authorized the ordering party to collect any amount from his account (letter of authorization for prompt collection order).
+Prompt collection can also be initiated against the account of the borrower without having any letter of authorization for prompt collection order, if there is a notarized deed on the debts toward the borrower (but it is rather a special type of execution than a security)."	F					Y	PROMPT COLLECTION ORDER INDICATOR	CLNDB		
+REGISTERED CITY POSTAL CODE	The client’s current resident settlement postal code.	F					Y	REGISTERED CITY POSTAL CODE	CLNDB		
+SALARY TRANSFER INDICATOR	Indicates whether the retail client’s regular salaries are transferred to an account maintained at the bank. Field is subject to further analysis -- whether it is available in the source systems, and on what level it (client or contract).	F	CLIENT				Y	SALARY TRANSFER INDICATOR	CLNDB		
+STANDARD AND POORS RATING		F	CLIENT				Y	STANDARD AND POORS RATING	CLNDB		
+TAX IDENTIFICATION NUMBER	The unique identifier of the client, issued by the country’s tax authority. VAT number in EU countries.	F	CLIENT				Y	TAX IDENTIFICATION NUMBER	CLNDB		
+TOTAL ASSETS	The client’s last available fiscal year’s total amount of assets in LCY (closing data if available) according to local or IFRS (as available).	F	TRANSACTIONS				Y	TOTAL ASSETS	CLNDB		
+TOTAL EQUITY	The client’s last available fiscal year’s total amount of equity in LCY (closing data if available) according to local or IFRS (as available).	F	TRANSACTIONS				Y	TOTAL EQUITY	CLNDB		
+TRANSACTIONAL ACTIVITY INDICATOR	The client have made a costumer initated transaction in the last 6 months on an account based product. (Excluding automated payments). Financial transactions are all customer-initiated transactions that result in a customer’s account being credited or debited. Examples include cash / cheque withdrawals and deposits, third party payments such as bill payments and debit card POS payments, inter-account transfers (e.g. transactions between an individual customer’s accounts).	F	TRANSACTIONS				Y	TRANSACTIONAL ACTIVITY INDICATOR	CLNDB		
+TURNOVER	The client’s last available fiscal year’s annual sales volume net of all discounts and sales taxes in LCY according to local or IFRS (as available).	F	TRANSACTIONS				Y	TURNOVER	CLNDB		
+YEAR OF BIRTH	Defines the birth year of  the client.  Available only for Retail clients.	F	CLIENT				Y	YEAR OF BIRTH	CLNDB		
+Acitivity Indicator	Indicates status of activitiy of clients based on OTP Definitions	NF	CLIENT								active
+AMLClient Risk	Customer relationship risk	F	CLIENT	[Reporting].[dbo].[AML_Client_Risk_Categorization_st1] 	AML_RISK						
+PEP Client	Pep type 	F	CLIENT								
+PEP Client Indicator	If is PEP	F	CLIENT	[Reporting].[dbo].[AML_Client_Risk_Categorization_st1]	PEP						
+Fatca Status	Fatca Status	F	CLIENT	[CorpFATCAClientsBal]	FATCA_STATUS						
+TAXIDENTNO1	Tax Identification No1	F	CLIENT	[CorpFATCAClientsBal], [RetailFATCAClientsBalance]	TAX_IDENT_NO_1						
+TAXIDENTNO2	Tax Identification No2	F	CLIENT		TAX_IDENT_NO_2						
+TAXIDENTNO3	Tax Identification No3	F	CLIENT		TAX_IDENT_NO_3						
+AML Risk Valid User Code	Code of the user who validated the customer relationship risk	F	CLIENT	AMLClientDatabase	USER_AML_RISK_AUTHORIZATION						
+AML Risk Create User Code	Code of the user who created the customer relationship risk	F	CLIENT	AMLClientDatabase	AML_RISK_CLASSIFIC_USERMAKER (BJ)						
+Birth country code	Birth country code	F	CLIENT	AMLClientDatabase	STATE_OF_BIRTH (ISO CODE)						
+Birth Town	Birth Town	F	CLIENT	AMLClientDatabase	PLACE_OF_BIRTH						
+BOA Segment	ID of customer segement as reported to BoA	NF	CATEGORISATION							Reports	
+Branch Creation Code	ID of the branch where cif of customer is opened	F	CLIENT	AMLClientDatabase	Branch_Code						to be added
+Branch Manage Code	ID of the branch which manages the customer (management branch)	NF	CLIENT	[KLIENT_AKTIV].[dbo].[retail_pro_vsb_clients_his_flex]	DEGA_CRM						to be added
+Business licence number	Business licence number	F	CLIENT	FCC.STTM_CUSTOMER	UNIQUE_ID_VALUE where UNIQUE_ID_NAME='011-VENDIM_I_QKR'						
+Address Part1	First Component of the address	F	CLIENT	fcc.sttm_customer	address_line1						
+Address Part2	Second Component of the address	F	CLIENT	fcc.sttm_customer	address_line2						
+Address Part3	Third Component of the address	F	CLIENT	fcc.sttm_customer	address_line3						
+Address Part4	Fourth Component of the address	F	CLIENT	fcc.sttm_customer	address_line4						
+Crm Creation Code	code of crm that opened the cif	F	CLIENT	[RetailFATCAClientsBalance], [CorpFATCAClientsBal]	OPEN_CRM						
+Crm ManageCode	code of crm that manages the client	NF	CLIENT	[KLIENT_AKTIV].[dbo].[retail_pro_vsb_clients_his_flex]	CRM_CODE						to be added
+Date of Birth		F	CLIENT	AMLClientDatabase	DATE_OF_BIRTH						
+Deceased Date	Date of death	F	CLIENT	fcc.CSTM_FUNCTION_USERDEF_FIELDS 	field_val_5 where FUNCTION_ID = 'STDCIF'  						
+Deceased Status	Deceased Status	F	CLIENT							Reports	
+Education level	Education level	F	CLIENT	fcc.STTMS_CUST_DOMESTIC	EDUCATIONAL_STATUS						
+Email address	Email address	F	CLIENT	fcc.sttm_cust_personal	e_mail						
+Father Name	Father Name	F	CLIENT	fcc.sttm_cust_personal	middle_name						
+Marital status	Marital Status of client	F	CLIENT	fcc.STTMS_CUST_DOMESTIC	MARITAL_STATUS						
+SPOUSE NAME	Name of spouse	F	CLIENT	fcc.STTMS_CUST_DOMESTIC	SPOUSE_NAME						
+National Identity Number (ID Card)	National Identity Number (ID Card)	F	CLIENT	FCC.STTM_CUSTOMER	SHORT_NAME						
+Nationality Country Code	Three character ISO 3166-1 alpha 3 code of the country in which the client has nationality  	F	CLIENT	FCC.STTM_CUSTOMER	nationality						
+Mobile Phone Number	Primary phone number mobile	F	CLIENT	fcc.sttm_cust_personal	mobile_number	Should be applied functions for format					
+Telephone Number	Telephone Number	F	CLIENT	fcc.sttm_cust_personal	telephone 						
+Home Tel Number	Home Tel Number	F	CLIENT	fcc.sttm_cust_personal	home_tel_no						
+Fax Number	Fax Number	NF	CLIENT	fcc.sttm_cust_personal	fax 						
+Profession (Job)	Profession (Job)	F	CLIENT	FCC.CSTM_FUNCTION_USERDEF_FIELDS	field_val_12						
+Status Indicator	Indicates if cif of client is opened or closed	F	CLIENT	fcc.sttm_customer	record_stat						
+UBOAddress		NF	CLIENT	[CorpFATCAClientsBal]	UBO_Address					Reports	
+ubobirthdate		NF	CLIENT	[CorpFATCAClientsBal]	ubo_birth_date					Reports	
+UBO birth Dateconv		NF	CLIENT/UBO	[CorpFATCAClientsBal]	UBO_birth_Date_conv					Reports	
+UBO Country of Birth		NF	CLIENT/UBO	[CorpFATCAClientsBal]	UBO_Country_of_Birth					Reports	
+UBO COUNTRY OF RESIDENCE		NF	CLIENT/UBO	[CorpFATCAClientsBal]	UBO_COUNTRY_OF_RESIDENCE					Reports	
+UBO CRS STATUS		NF	CLIENT/UBO	[CorpFATCAClientsBal]	UBO_CRS_STATUS					Reports	
+UBO CUSTOMER NAME		NF	CLIENT/UBO	[CorpFATCAClientsBal]	UBO_CUSTOMER_NAME					Reports	
+UBO CUSTOMER ID		NF	CLIENT/UBO	[CorpFATCAClientsBal]	UBO_CUSTOMER_NO					Reports	
+UBO FATCA STATUS		NF	CLIENT/UBO	[CorpFATCAClientsBal]	UBO_FATCA_STATUS					Reports	
+UBO Nationality		NF	CLIENT/UBO	[CorpFATCAClientsBal]	UBO_Nationality					Reports	
+UBO Place of Birth		NF	CLIENT/UBO	[CorpFATCAClientsBal]	UBO_Place_of_Birth					Reports	
+NIPT/NIUS		F	CLIENT/UBO	fcc.sttm_customer, fcc.CSTM_FUNCTION_USERDEF_FIELDS  where FUNCTION_ID = 'STDCIF'	nvl(fcc.sttm_customer.udf_1, fcc.CSTM_FUNCTION_USERDEF_FIELDS.field_val_20)						
+Risk Confirmation Date		F	CLIENT								
+AMLRisk Classification	Classification of AML Risk	NF	CLIENT	AMLClientDatabase	AML_RISK_CLASSIFIC						AMLClient Risk
+AMLRisk Classification Date	Date of Classification of AML Risk	F	CLIENT	AMLClientDatabase	AML_RISKCLASSIFIC_DATE						
+Source Of Income	Source of Income	F	CLIENT	AMLClientDatabase	BURIM_ARDHURAVE	(NDODHET NE LOT, NUK ESHTE NE FLEX)					
+Last Transactin Date	Last Transactin Date	F	CLIENT	AMLClientDatabase	LAST_TRANSACTION_DATE						
+Avgerage Amount Eur	Average Amount of Client in Euro for all Deposits	F	CLIENT	AMLClientDatabase	AVG_AMOUNT_EUR						
+Cif Last Update 	Last date of update for the CIF	F	CLIENT	AMLClientDatabase	LAST_UPDATED_CIF						
+Customer Profession	Customer Profession	NF	CLIENT	AMLClientDatabase	PROFESIONI_PROFILI						Profession (Job)
+RECORDTYPE	ASD Record Type	F	CLIENT/IT	fcrpt.dbo.ASD_Klient	RECORD_TYPE	ASD					
+FILE_TYPE	ASD File Type 	F	CLIENT/IT	fcrpt.dbo.ASD_Klient	FILE_TYPE	ASD					
+SWIFT_CODE	ASD Swift Code	F	TRANSACTIONS	fcrpt.dbo.ASD_Klient	SWIFT_CODE	ASD					
+SURNAME_BEF_MARRIAGE	Last Name before Marriage	F	CLIENT/IT	fcrpt.dbo.ASD_Klient	SURNAME_BEF_MARRIAGE	ASD					
+INSURANCE_COV_STATUS	ASD Insurance coverage status	NF	PRODUKTI	fcrpt.dbo.ASD_Klient	INSURANCE_COV_STATUS	ASD					
+IDENTIFICATION_DOC	Type of identification document	F	CLIENT/IT	fcrpt.dbo.ASD_Klient	IDENTIFICATION_DOC	ASD					
+ISSUING_ID		F	PRODUKTI	fcrpt.dbo.ASD_Klient	ISSUING_ID	ASD					
+DIA_RELATED		F	PRODUKTI	fcrpt.dbo.ASD_Klient	DIA_RELATED	ASD					
+AML_RISK_CLASSIFIC_REASON		F	CLIENT	AMLClientDatabase							
+COUNTRY_OF_ORIGIN		F	CLIENT	AMLClientDatabase							
+DATA_RISHIKIMIT_KYC		F	CLIENT	AMLClientDatabase							
+EXPOSURE_COUNTRY		F	CLIENT	AMLClientDatabase							
+FLAG_RES_NORES		NF	CLIENT	AMLClientDatabase							
+OJF_FLAG		NF	CLIENT	AMLClientDatabase							warning
+PERSON_TITLE		F	CLIENT	AMLClientDatabase							
+PLACE_OF_BIRTH		NF	CLIENT	AMLClientDatabase							Birth Town
+STATE_OF_BIRTH		NF	CLIENT	AMLClientDatabase							
+USER_AML_RISK_AUTHORIZATION		NF	CLIENT	AMLClientDatabase							AML Risk Valid User Code
+Legal_Name		NF	CLIENT	CorpFATCAClientsBal							
+STATE_RES_CRS_1		F	CLIENT	FCC.STTM_COUNTRY	h.Field_val_60 						
+STATE_RES_CRS_2		F	CLIENT	FCC.STTM_COUNTRY	h.Field_val_61						
+STATE_RES_CRS_3		F	CLIENT	FCC.STTM_COUNTRY	h.Field_val_62						
+CAR_Pool_Type		NF	CLIENT	[KLIENT_AKTIV].[dbo].[FatcaSemi] /[KLIENT_AKTIV].[dbo].[FatcaSemiPersonFizik]		Nuk ka te dhena ne sistem					
+PARTY_OWNERSHIP_ADDRESS		NF	CLIENT	[KLIENT_AKTIV].[dbo].[FatcaSemi] /[KLIENT_AKTIV].[dbo].[FatcaSemiPersonFizik]		Nuk ka te dhena ne sistem					
+PARTY_OWNERSHIP_COUNTRY		NF	CLIENT	[KLIENT_AKTIV].[dbo].[FatcaSemi] /[KLIENT_AKTIV].[dbo].[FatcaSemiPersonFizik]		Nuk ka te dhena ne sistem					
+PARTY_OWNERSHIP_FIRST_NAME		NF	CLIENT	[KLIENT_AKTIV].[dbo].[FatcaSemi] /[KLIENT_AKTIV].[dbo].[FatcaSemiPersonFizik]		Nuk ka te dhena ne sistem					
+PARTY_OWNERSHIP_LAST_NAME		NF	CLIENT	[KLIENT_AKTIV].[dbo].[FatcaSemi] /[KLIENT_AKTIV].[dbo].[FatcaSemiPersonFizik]		Nuk ka te dhena ne sistem					
+PARTY_OWNERSHIP_TIN_NUMBER		NF	CLIENT	[KLIENT_AKTIV].[dbo].[FatcaSemi] /[KLIENT_AKTIV].[dbo].[FatcaSemiPersonFizik]		Nuk ka te dhena ne sistem					
+TERRITORIAL_CODE		NF	CLIENT	AMLFlexData							
+Offshore		F	CLIENT	AMLClientDatabase							
+Risk_score		F	CLIENT	AMLClientDatabase							
+relationship	Representative Relationship	NF	PRODUCT	FCC.CSTB_RELATIONSHIP_LINKAGE							
+relationship	Customer group relationship	NF	PRODUCT	fcc.sttm_cust_group							
+unique_id_name	Representative ID Type	NF	CLIENT	FCC.STTM_CUSTOMER							
+E_ADDRESS1	Employment Address	NF		FCC.STTM_CUST_PROFESSIONAL							
+ACCOUNT OWNER	Account Holder(s)	NF	PRODUCT	BOREP.fn_get_cif_joint_holders							
+POWER OF AUTORNEY REPRESENTANT	Procurator(s)	NF	PRODUCT	BOREP.fn_get_cif_joint_holders							
+DIRECTOR	Director(s)	NF	PRODUCT	BOREP.fn_get_cif_joint_holders							
+Administrator	Administrator(s)	NF	PRODUCT	BOREP.fn_get_cif_joint_holders							
+ac.cust_ac_no (parameter)	Account joint holder names	NF	PRODUCT	BOREP.fn_get_cif_joint_holders							
+counterparty	Trade contract counterparty (customer no)	NF	PRODUCT	fcc.CSTBS_CONTRACT							
+auth_stat	Customer authorization status	F	CLIENT	fcc.sttm_customer							
+checker_dt_stamp		F	CLIENT	FCC.STTM_CUSTOMER							
+cif_status_since		F		FCC.STTM_CUSTOMER							
+credit_rating	Customer credit rating	F		FCC.STTM_CUSTOMER							
+organisation_name		F	CLIENT	FCC.STTM_CUSTOMER							
+PERFAQESUESI_LIGJOR		NF	CLIENT	FCC.STTM_CUSTOMER							
+maker_id		NF	CLIENT								Crm Creation Code
+passport_no	Passport Number	F									
+record_stat	RECORD STATUS	NF									Status Indicator
+udf_2	CIF_open_date	NF									Creation Date
+udf_3	PRODUCT_CODE	NF	PRODUCT								
+UDF_4	organization_form	NF									
+f.field_val_21	Personal Data Usage Flag	NF		FCC.cstm_function_userdef_fields / FCC.sttm_customer							to be added
+(function output) customer_no	Director Name/Administrator Name/Authorized Representative	NF		fcc.cstm_function_userdef_fields							
+f.field_val_8	Legal Status Description	NF		fcc.cstm_function_userdef_fields							
+f.field_val_14	Employment Type Description	NF		fcc.cstm_function_userdef_fields							
+f.field_val_31	CRS Country Code	NF		fcc.cstm_function_userdef_fields							
+
+ 
