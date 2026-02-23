@@ -1,0 +1,385 @@
+DB	FIELD	DESC
+AMLA	account_number	ISO 13616 standard format account number.
+AMLA	account_status	Status of the account
+AMLA	aml_address_type	Type of connection
+AMLA	country_of_address	Country id of the address
+AMLA	virtual_office	The virtual (registered) office is a service that provides a legal physical address and any administrative support (e.g.: mail forwarding services)
+AMLA	contract_id	The number of the contract in the source system
+AMLA	contract_status	Name statuses for contracts defined as living (e.g. live contract, contract in termination).
+AMLA	date_of_contract_creation	The date of creation (signing) of the contract is the specific point in time when the contracting parties officially agree on the terms of the contract and sign it. This date marks the beginning of the contract's legal validity.
+AMLA	aml_client_role_type	It shows the types of customer-to-contract relationship relationship.
+AMLA	admin_of_periodic_review	Unique identifier of the administrator conducting the review.
+AMLA	KYC_questionnaire_compl_date	The date of completion of the KYC (Know Your Customer) questionnaire is the point in time when the customer has successfully completed the KYC due diligence process and provided all necessary information
+AMLA	KYC_questionnaire_open_date	The date of the opening of the KYC (Know Your Customer) questionnaire.
+AMLA	KYC_questionnaire_status	"The statuses of the KYC (Know Your Customer) due diligence questionnaire from a compliance perspective can be as follows:
+Valid: The customer has successfully met the KYC requirements, and the questionnaire is considered valid. This status indicates that the customer's data complies with regulatory requirements and is eligible to use financial services.
+Deleted: The customer's KYC questionnaire has been deleted because it did not meet compliance requirements or other criteria, or a new questionnaire has been completed."
+AMLA	KYC_questionnaire_substatus	"The substatuses of the KYC (Know Your Customer) due diligence questionnaire from a compliance perspective can be as follows:
+Rejected: The customer's KYC questionnaire has been rejected because it did not meet compliance requirements or other criteria. This status indicates that the customer has not fulfilled the KYC requirements and cannot conduct financial transactions with the institution.
+Final: The customer's KYC questionnaire has been finalized, and all necessary information has been provided. This status indicates that the customer has met the KYC requirements and is eligible to use financial services.
+Awaiting Permission: The customer's KYC questionnaire has been submitted, but the necessary permissions or approvals are still pending to complete the compliance process. This status indicates that the customer's data is under review.
+Draft: The customer's KYC questionnaire has not yet been finalized, and additional information or documents are needed to complete the process. This status indicates that the customer has not yet fulfilled the KYC requirements.
+"
+AMLA	KYC_questionnaire_type	The types of the KYC (Know Your Customer).
+AMLA	active_cust	Any customer who has a transaction in the last 6 months.
+AMLA	aml_fatf_falg	"Any AML corporate client considered to be a client from FATF grey or black list country, if
+- the customer has its country of establishment (registered office), or
+- the customer’s ultimate beneficial owner, a person authorised for disposal on the customer’s behalf or the customer’s representative is a national of or has his/her country of residence (permanent or habitual residence)
+in such jurisdiction classified as FATF grey or black list country."
+AMLA	aml_high_risk_country_flag	"Any AML corporate client considered to be a client of high or extremely high risk jurisdiction, if
+- the customer has its country of establishment (registered office), or
+- the customer’s ultimate beneficial owner, a person authorised for disposal on the customer’s behalf or the customer’s representative is a national of or has his/her country of residence (permanent or habitual residence)
+in such jurisdiction classified as extremely high-risk country or high-risk country according to the Group AML regulation."
+AMLA	client_cecil_id	The unique identifier of the client, derived from CECIL (central client master)
+AMLA	client_creation_date	Date when client signed first contract with the bank even if this contract has been already ceased or matured – typically this is the date when the particular client ID has been registered in the core banking system
+AMLA	client_gwb_id	The unique identifier of the client, which comes from the local transaction data warehouse.
+AMLA	client_status	"During the client onboarding process, various client types and statuses are defined to help financial institutions properly manage and track clients. The client statuses can be as follows:
+
+Under Registration: The client's data is still being processed, and the registration process is not yet complete. 
+Acceptance in Progress: The client's data is under review, and the financial institution is making a decision on the client's acceptance. 
+Rejected: The client did not meet compliance requirements or other criteria, so their registration application was rejected. 
+Request for Additional Information: Additional information is needed for the client's registration application to complete the compliance processes. Accepted: The client has successfully completed the registration and compliance processes and has been officially accepted as a client of the financial institution.
+
+These statuses help ensure that the client onboarding process is transparent and compliant, and that the financial institution efficiently manages client data and related financial operations."
+AMLA	The type of legal form of the customer	The type of legal form of the customer
+AMLA	date_of_death	It shows the date of death of the deceased customer.
+AMLA	date_of_periodic_review	The date of periodic review is the point in time when the financial institution regularly checks the customer's data and risk profile to ensure they are up-to-date and comply with regulatory requirements. The purpose of periodic reviews is to keep the customer's data accurate and current, and to enable the institution to timely identify and manage potential risks.
+AMLA	due_date_of periodic_review	"The due date of periodic review is the point in time when the financial institution must regularly check the customer's data and risk profile to ensure they are up-to-date and comply with regulatory requirements. This date indicates when the next review should be conducted and helps the institution timely identify and manage potential risks.
+The frequency of periodic reviews can vary depending on the customer's risk classification. For example, high-risk customers may be reviewed annually, medium-risk customers every two years, and low-risk customers every three years. The institution's policies and procedures determine the frequency of periodic reviews for different customers."
+AMLA	KYC_questionnaire_fl	The flag shows that the customer (new or existing) has a KYC (Know Your Customer) due diligence questionnaire.
+AMLA	kyc_risk_score	According to criteria defined by local compliance, the score is calculated based on the customer's responses to the KYC (Know Your Customer) questionnaire. This score helps identify the customer's financial situation, creditworthiness, and other relevant factors that may influence business decisions related to them.
+AMLA	masking_date	Date of masking for customers masked by GDPR process.
+AMLA	nationality	Nationality of the customer
+AMLA	offboarding_date	From a compliance perspective, the termination of the business relationship refers to the specific point in time when the financial institution, in accordance with applicable laws and internal regulations, actually closes the client’s account and thereby ends the business relationship.
+AMLA	offboarding_initiator	The department who initiated the customer's offboarding. E.g.: KYC, AML
+AMLA	offboarding_type	"Types of business relationship termination include immediate offboarding and offboarding with prior notice.
+Immediate offboarding occurs when the business relationship ends without delay, and the account is closed promptly. The customer is informed as soon as possible. This approach is typically applied in cases of serious compliance or legal concerns, such as suspected money laundering or fraud.
+Offboarding with prior notice means the business relationship ends after a defined notice period. During this time, the customer is informed of the upcoming termination and given the opportunity to resolve any outstanding obligations. This method is generally used in less severe situations, such as failure to meet account maintenance requirements.
+In both cases, accurate documentation and strict adherence to compliance regulations are essential to ensure the financial institution’s legal and regulatory compliance and to safeguard the customer’s rights."
+AMLA	PEP	"Politically exposed person: a natural person who is entrusted with prominent public functions, or who has been entrusted with such functions within the period preceding the implementation of customer due diligence measures, as specified in local legislation;
+Family member of a politically exposed person:
+a) the spouse, or a person considered to be equivalent to a spouse, of a politically exposed person;
+b) the children and their spouses, or persons considered to be equivalent to a spouse, of a politically exposed person;
+c) the parents of a politically exposed person;
+Person known to be a close associate to a politically exposed person:
+a) natural persons who are known to have joint beneficial ownership of legal entities or legal arrangements, or any other close business relations, with a politically exposed person;
+b) natural persons who have sole beneficial ownership of a legal entity or legal arrangement which is known to have been set up for the de facto benefit of a politically exposed person"
+AMLA	reason _for_offboarding	If the business relationship is terminated, the reason for termination must be thoroughly documented (e.g., terminated by CMP). Accurately recording the reason for termination is essential for compliance processes, as it helps identify the factors that led to the end of the relationship. This information plays a crucial role in the internal control and auditing processes of financial institutions, as well as in maintaining legal and financial compliance. The termination of the business relationship is executed through the offboarding process, which includes closing the account and completing all necessary compliance and operational steps.
+AMLA	relevant_customer	"Compliance customer
+any natural or legal person who, in a contract concluded with the OTP Group, appears as a debtor, co-debtor, collateral debtor, account holder, co-owner, or in any other role that is significant from the perspective of AML or other compliance risks. This includes, for example, participants in current accounts, deposit accounts, credit accounts, securities accounts, but also unidentified cash depositors.
+
+The following, for example, are not considered compliance customers:
+•    Participants who are included in the system solely for technical or administrative purposes (e.g., test customers).
+•    A participant associated with a transaction or contract type that does not pose a risk from a compliance perspective and is not relevant from an AML perspective (e.g., subsidies)."
+AMLA	risk_category	According to criteria specified by local compliance, the customer is classified into different risk categories (low, medium, high). These categories help identify the customer's financial situation, creditworthiness, and other relevant factors that may influence business decisions related to them.
+AMLA	risk_score	According to criteria specified by local compliance, the customer's risk score is determined. This score includes the score obtained during the KYC (Know Your Customer) process, as well as geographic risk. These risk factors help identify the customer's financial situation, creditworthiness, and other relevant factors that may influence business decisions related to them.
+AMLA	secondary nationality	The client's nationality, which exists alongside their primary nationality, represents a legal connection to another country and can be verified with a document.
+AMLA	segment	Banking segments refer to the grouping of clients based on similar characteristics and needs.
+AMLA	third_party	The relation type between customer and partner
+AMLA	aml_client_role_type	Type of the relation to customer
+AMLA	amount	The total amount of transactions received by the customer during the given month (between the first and last day of the month based on the value date). The amount should be reported in value and in euros. The exchange rate to be used is the mid-market rate applicable in the respective country on the value date.
+AMLA	country_code	The counterparty's country code. In the case of an IBAN counterparty account number, the first two characters, in the case of a BIC code, typically two characters from the fifth character.
+AMLA	direction	This marker shows the direction of the transaction, which can be outgoing or incoming.
+AMLA	number	The total number of transactions received by the customer during the given month (between the first and last day of the month based on the value date). 
+AMLA	original_currency	The original currency in which the transaction was made. 
+AMLA	reporting_date	The last day of the given month to which the transaction data pertains.
+AMLA	transaction_category	The category of the transaction type.
+AMLA	corporate_risk	Country (state) risk for corporate customers.
+AMLA	correspondent_banking_risk	The risk of the given country (state)  from a correspondent banking perspective.
+AMLA	country_name	The English name of the given country. At the value set level, it should also include the values of stateless and unknown.
+AMLA	EEA	The flag shows whether the country is a member of the European Economic Community.
+AMLA	EU	The flag shows whether the country is a member of the European Union.
+AMLA	fatf_country_flag	In the case of customer identification, all jurisdictions managed by the FATF (including those not on the grey or blacklists)
+AMLA	offshore	The flag shows whether the given country is an offshore country (state).
+AMLA	region	The specific region in which the country is located.
+AMLA	residential_risk	Country (state) risk for retail customers.
+AMLA	state	A territorial-administrative unit that operates as part of a federal state, has its own government and legislative powers, but is subject to the federal constitution and central authority.
+AMLA	date_of_sanction_alert_creation	In the sanctions alert tracking system, this field indicates the date of creation of the alerts.
+AMLA	sanction_alert_activity	Activities associated with the alerts.
+AMLA	sanction_alert_activity_comment	The comment recorded for the sanction alert.
+AMLA	sanction_alert_identifier	A sanction alert identifier is a unique code or reference number used to identify alerts related to sanctions. These alerts are typically generated when a transaction or entity meets the criteria of sanctions lists, indicating potential compliance issues.
+AMLA	sanction_alert_status	In the sanctions alert tracking system, this field indicates the current status of the alert. This field can contain various statuses, such as 'Active', 'Resolved', 'In Progress', etc., which help track the process of handling alerts.
+AMLA	client_identifier	The customer identifier associated with the detected transaction
+AMLA	date_of_detection_creation	In the sanctions alert tracking system, the specific date and time when a particular detection event was first identified and recorded in the system.
+AMLA	detection_identifier	ID for all scanned data: in the sanctions alert tracking system, the unique detection identifier used by the system to detect and track data from various sources. This identifier helps identify and document potential threats, crimes, and security risks that arise from the data continuously analyzed by the system.
+AMLA	status_of_detection	In the sanctions alert tracking system, the detection statuses, except for the clean detection, i.e., those that did not generate an alert.
+AMLA	transaction_identifier	International transaction identifier for detection is a unique identifier assigned to a transaction based on an international payment system. This helps determine which customer the detected transaction belongs to.
+AMLA	Status	The status of the suspended transaction.
+AMLA	end_date	The end of a transaction suspension is when a decision is made to block or release the transaction.
+AMLA	start_date	The date the transaction was suspended.
+AMLA	alert_account_number	Account number in 24 digit format
+AMLA	alert_check_name	In the transaction monitoring system, it is a term that denotes the name of the alert check. This name helps to identify and categorize alerts within the system, making it easier to manage and track them. Value list interpreted only for WLM channel, empty for SM and Manual.
+AMLA	alert_creation_date	In the transaction monitoring system, this date is the transaction monitoring date, i.e., the date the alert was generated.
+AMLA	alert_customer_id	In the transaction monitoring system, the identifier of the customer whose transaction triggered the alert.
+AMLA	alert_first_reason	In the transaction monitoring system, this field indicates the main reason (i.e.: scenario) for the alert. This field helps identify why the alert was entered into the system, such as suspicious transaction, rule violation, or other financial crime.
+AMLA	alert_identifier	In the transaction monitoring system, this field indicates the unique identifier of the alert. This field helps identify and track specific alerts within the system.
+AMLA	alert_source_system	In the transaction monitoring system, this field indicates which channel the alert came from.
+AMLA	alert_status_name	In the transaction monitoring system, this field indicates the status of alerts. This field can contain various statuses, such as 'New', etc., which help track the process of handling alerts.
+AMLA	reported_date	In the transaction monitoring  system, this field indicates the date the alert was reported. This field is important for tracking alerts as it helps determine when the alert was entered into the system, thereby aiding in the temporal tracking of alert management.
+AMLA	reported_fl	Based on the information in the transaction monitoring system, a marker indicating that the client has been reported to the local tax authority based on the alert
+AMLA	SOF_fl	Verification of the source of new incoming funds in cases where it is made mandatory by the Regulator justified by a risk-based approach.
+CLNDB	CLIENT_ID	
+CLNDB	CLIENT_BUSINESS_SEGMENT	
+CLNDB	CLIENT_BASEL_SEGMENT	
+CLNDB	CLIENT_COUNTRY_CODE	
+CLNDB	LEGAL_FORM	
+CLNDB	SALARY_TRANSFER_INDICATOR	
+CLNDB	ANNUAL_INCOME	
+CLNDB	CLIENT_ACTIVITY_CODE	
+CLNDB	CLIENT_GENDER	
+CLNDB	YEAR_OF_BIRTH	
+CLNDB	REGISTERED_CITY_POSTAL_CODE	
+CLNDB	INTERNETBANK_CONTRACT_INDICATOR	
+CLNDB	INTERNETBANK_ONBOARDING_INDICATOR	
+CLNDB	INTERNTEBANK_ACTIVITY_INDICATOR	
+CLNDB	INTERNETBANK_TRANSACTION_INDICATOR	
+CLNDB	MOBILE_BANK_SERVICE_INDICATOR	
+CLNDB	MOBILE_BANK_ACTIVATION_INDICATOR	
+CLNDB	MOBILE_BANK_ACTIVITY_INDICATOR	
+CLNDB	MOBILE_BANK_TRANSACTION_INDICATOR	
+CLNDB	CONTROLL_SMS_SERVICE_INDICATOR	
+CLNDB	CALL_CENTER_SERVICE_INDICATOR	
+CLNDB	TRANSACTIONAL_ACTIVITY_INDICATOR	
+CLNDB	NUMBER_OF_TRANSACTIONS	
+CLNDB	FINREP_SECTOR	
+CLNDB	FOUNDATION_CLIENT	
+CLNDB	MONTHLY_SALARY_TRANSFER_VALUE	
+CLNDB	MONTHLY_PENSION_TRANSFER_VALUE	
+CLNDB	MONTHLY_OTHER_INCOME_TRANSFER_VALUE	
+CLNDB	MONTH_OF_BIRTH	
+CLNDB	Client_type	
+CLNDB	DATE_OF_CLIENT_OPENING	
+CLNDB	DATE_OF_VERIFICATION_FOR_PERSONAL_DETAILS	
+CLNDB	Employment Status	
+CLNDB	OCCUPATION_TYPE	
+CLNDB	CLIENT_NAME	
+CLNDB	NON_RETAIL_CLIENT_LIMIT	
+CLNDB	NON_RETAIL_CLIENT_LIMIT_CURRENCY	
+CLNDB	TAX_IDENTIFICATION_NUMBER	
+CLNDB	EBITDA	
+CLNDB	TOTAL_ASSETS	
+CLNDB	TOTAL_EQUITY	
+CLNDB	TURNOVER	
+CLNDB	NUMBER_OF_EMPLOYEES	
+CLNDB	BANKRUPTCY_INDICATOR	
+CLNDB	LIQUIDATION_INDICATOR	
+CLNDB	PROMPT_COLLECTION_ORDER_INDICATOR	
+CLNDB	ACTIVE_NON_RETAIL_CLIENT_INDICATOR	
+CLNDB	INTERNEBANK_ACTIVITY_INDICATOR	
+CLNDB	INDIVIDUAL_ASSESSMENT_INDICATOR	
+CLNDB	FITCH_RATING	
+CLNDB	MOODYS_RATING	
+CLNDB	STANDARD_AND_POORS_RATING	
+CLNDB	CONSOLIDATION_ID	
+CLNDB	NUMBER_OF_BUNDLE_PRODUCT	
+CLNDB	POS_TERMINAL_SERVICE_INDICATOR	
+CLNDB	LEI_CODE	
+CLNDB	PRE_FILTERING_RESULT_TYPE	
+CLNDB	ESG_CLIENT_RISK_CATEGORY	
+CLNDB	Date of incorporation	
+CLNDB	Description	
+REV	Client ID Type	Unique ID of Client Mapping
+REV	Customer Type	Customer Type from CBS
+REV	CUSTOMER CATEGORY Code	Customer Category Code from CBS
+REV	Customer Segment Group Code	Customer Segment Group Code
+REV		If Customer Is Active
+REV	ANNUAL INCOME	The last available best estimate about the annual income of the retail client in LCY.
+REV	BANKRUPTCY INDICATOR	Indicates if any bankruptcy is imposed against the client
+REV	CALL CENTER SERVICE INDICATOR	"Indicator that defines whether the client has call center service, i.e. is capable to initiate transaction via call center. 
+
+For the exact list of the kind of transactions that are included in the definition, please see 'Transactional activity indicator' under the Related definitions section."
+REV	NACE CODE	NACE
+REV	CLIENT BASEL SEGMENT	
+REV	CLIENT BUSINESS SEGMENT	
+REV	CLIENT COUNTRY RESIDENCE CODE	Residence/Address country
+REV	CLIENT GENDER	Identifies the client’s state of being male or female. Available only for Retail clients.
+REV	CLIENT ID	Unique identifier of the depositor or debtor
+REV		Main category of clients
+REV	CONSOLIDATION ID	"Consolidation code of the client, should be filled for group members only. Unique identification of OTP Bank and it's affiliates included in accounting consolidation.
+Should be filled only for clients involved in consolidation."
+REV	CONTROLL SMS SERVICE INDICATOR	"Indicator that defines whether the client has controll SMS service, i.e. is capable to initiate transaction via SMS. 
+
+For the exact list of the kind of transactions that are included in the definition, please see 'Transactional activity indicator' under the Related definitions section"
+REV	Creation date of the company	Creation date of the company
+REV	Creation country of the company	Creation country of the company
+REV	Date of Verification for Personal Details	
+REV	Creation Date	date creation of cif
+REV	Description	
+REV	EBITDA	"The client’s last available fiscal year’s EBITDA in LCY. There is no group standard regarding the calculation of EBITDA, local values should be reported by the subsidiaries.
+ "
+REV	Employment Status	
+REV	ESG CLIENT RISK CATEGORY	
+REV	FINREP SECTOR	"FINREP counterparty breakdown according to Regulation (EU) No. 680/2014 of the European Commission of 16 April 2014 Part I. 35.
+
+COUNTERPARTY BREAKDOWN
+(a) central banks; 
+(b) general governments: central governments, state or regional governments, and local governments, including administrative bodies and non-commercial undertakings, but excluding public companies and private companies held by these administrations that have a commercial activity (which shall be reported under ‘credit institutions’, ‘other financial corporations’ or ‘non-financial corporations’ depending on their activity); social security funds; and international organisations, such as the European Community, the International Monetary Fund and the Bank for International Settlements; 
+(c) credit institutions: any institution covered by the definition in Article 4(1)(1) of CRR (‘undertaking the business of which is to take deposits or other repayable funds from the public and to grant credits for its own account’) and multilateral development banks (MDBs); 
+(d) other financial corporations: all financial corporations and quasi-corporations other than credit institutions such as investment firms, investment funds, insurance companies, pension funds, collective investment undertakings, and clearing houses as well as remaining financial intermediaries, financial auxiliaries and captive financial institutions and money lenders; 
+(e) non-financial corporations: corporations and quasi-corporations not engaged in financial intermediation but principally in the production of market goods and non-financial services according to the ECB BSI Regulation; 
+(f) households: individuals or groups of individuals as consumers and producers of goods and non-financial services exclusively for their own final consumption, and as producers of market goods and non-financial and financial services provided that their activities are not those of quasi-corporations. Non-profit institutions which serve households (‘NPISH’) and which are principally engaged in the production of non-market goods and services "
+REV	FITCH RATING	"Fitch External Credit Assessment Institutions (ECAI) long term rating of the clients, guarantors, funded credit protection issuers which have external credit rating and belong to one of the following segment:
+- regional governments or local authorities not treated as central government,
+- public sector entities,
+- multilateral development banks,
+- institutions, central counterparties with external rating,
+- corporates."
+REV	FOUNDATION CLIENT	
+REV	INDIVIDUAL ASSESSMENT INDICATOR	"Indicator that shows whether the client's exposure should be assessed on an individual basis.
+As a group policy, indicator should be ""Yes"" for non-retail clients if the total exposure of the client / client group is above 0,4 M EUR, or above 1 M EUR for clients financed only with standardized products. Lower local practice is allowed if the new threshold covers at least 80% of the portfolio; indicator should be ""Yes"" for these clients as well. In any other cases, indicator should be ""No"".
+When calculating the threshold, exposure reported in the BS (on gross amortized cost / fair value loans), and exposure reported amongst the off-balance items (such as guarantees and unused credit lines) should be considered together. In case of a partial write-off, the gross exposure should be considered. In case of a full write-off, volumes should be omitted from the calculation."
+REV	INTERNEBANK ACTIVITY INDICATOR	
+REV	INTERNETBANK CONTRACT INDICATOR	Indicator, which defines, whether the clients requested/have internet bank contract. 
+REV	INTERNETBANK ONBOARDING INDICATOR	
+REV	INTERNETBANK TRANSACTION INDICATOR	
+REV	INTERNTEBANK ACTIVITY INDICATOR	
+REV	LEGAL FORM	LEGAL FORM
+REV	LEI CODE	Legal Entity Identifier
+REV	LIQUIDATION INDICATOR	Indicates if the client is going into liquidation or at the state of being liquidated.
+REV	LOCAL CLIENT GROUP ID	"Unique identifier of the client group on local level, based on the group-level Risk Assumption Regulation.
+To be filled only for clients that are part of a local client group. Can be filled for retail clients as well, in accordance with the RAR."
+REV	LOCAL CLIENT GROUP LIMIT	
+REV	LOCAL CLIENT GROUP LIMIT END DATE	
+REV	LOCAL CLIENT GROUP NAME	
+REV	LOCAL GROUPING CRITERIA	
+REV	MOBILE BANK ACTIVATION INDICATOR	
+REV	MOBILE BANK ACTIVITY INDICATOR	
+REV	MOBILE BANK SERVICE INDICATOR	Indicator, which defines whether the client requested/have mobile bank service. 
+REV	MOBILE BANK TRANSACTION INDICATOR	
+REV	MONTH OF BIRTH	
+REV	MONTHLY OTHER INCOME TRANSFER VALUE	
+REV	MONTHLY PENSION TRANSFER VALUE	
+REV	MONTHLY SALARY TRANSFER VALUE	
+REV	MOODYS RATING	
+REV	NUMBER OF BUNDLE PRODUCT	
+REV	NUMBER OF EMPLOYEES	The client’s last available fiscal year’s statistics on the number of its employees (closing data if available). Count of the employees in the given reporting period.
+REV	Occupation Type	
+REV	POS TERMINAL SERVICE INDICATOR	0
+REV	PRE FILTERING RESULT TYPE	
+REV	PROMPT COLLECTION ORDER INDICATOR	"With a prompt collection order indicator the entitled party indicates whether the credit institution of the obligor is ordered to collect a specific amount from the obligor’s current account. The credit institution shall accept and perform the prompt collection order if the obligor (as account holder) previously authorized the ordering party to collect any amount from his account (letter of authorization for prompt collection order).
+Prompt collection can also be initiated against the account of the borrower without having any letter of authorization for prompt collection order, if there is a notarized deed on the debts toward the borrower (but it is rather a special type of execution than a security)."
+REV	REGISTERED CITY POSTAL CODE	The client’s current resident settlement postal code.
+REV	SALARY TRANSFER INDICATOR	Indicates whether the retail client’s regular salaries are transferred to an account maintained at the bank. Field is subject to further analysis -- whether it is available in the source systems, and on what level it (client or contract).
+REV	STANDARD AND POORS RATING	
+REV	TAX IDENTIFICATION NUMBER	The unique identifier of the client, issued by the country’s tax authority. VAT number in EU countries.
+REV	TOTAL ASSETS	The client’s last available fiscal year’s total amount of assets in LCY (closing data if available) according to local or IFRS (as available).
+REV	TOTAL EQUITY	The client’s last available fiscal year’s total amount of equity in LCY (closing data if available) according to local or IFRS (as available).
+REV	TRANSACTIONAL ACTIVITY INDICATOR	The client have made a costumer initated transaction in the last 6 months on an account based product. (Excluding automated payments). Financial transactions are all customer-initiated transactions that result in a customer’s account being credited or debited. Examples include cash / cheque withdrawals and deposits, third party payments such as bill payments and debit card POS payments, inter-account transfers (e.g. transactions between an individual customer’s accounts).
+REV	TURNOVER	The client’s last available fiscal year’s annual sales volume net of all discounts and sales taxes in LCY according to local or IFRS (as available).
+REV	YEAR OF BIRTH	Defines the birth year of  the client.  Available only for Retail clients.
+REV	Acitivity Indicator	Indicates status of activitiy of clients based on OTP Definitions
+REV	AMLClient Risk	Customer relationship risk
+REV	PEP Client	Pep type 
+REV	PEP Client Indicator	If is PEP
+REV	Fatca Status	Fatca Status
+REV	TAXIDENTNO1	Tax Identification No1
+REV	TAXIDENTNO2	Tax Identification No2
+REV	TAXIDENTNO3	Tax Identification No3
+REV	AML Risk Valid User Code	Code of the user who validated the customer relationship risk
+REV	AML Risk Create User Code	Code of the user who created the customer relationship risk
+REV	Birth country code	Birth country code
+REV	Birth Town	Birth Town
+REV	BOA Segment	ID of customer segement as reported to BoA
+REV	Branch Creation Code	ID of the branch where cif of customer is opened
+REV	Branch Manage Code	ID of the branch which manages the customer (management branch)
+REV	Business licence number	Business licence number
+REV	Address Part1	First Component of the address
+REV	Address Part2	Second Component of the address
+REV	Address Part3	Third Component of the address
+REV	Address Part4	Fourth Component of the address
+REV	Crm Creation Code	code of crm that opened the cif
+REV	Crm ManageCode	code of crm that manages the client
+REV	Date of Birth	
+REV	Deceased Date	Date of death
+REV	Deceased Status	Deceased Status
+REV	Education level	Education level
+REV	Email address	Email address
+REV	Father Name	Father Name
+REV	Marital status	Marital Status of client
+REV	SPOUSE NAME	Name of spouse
+REV	National Identity Number (ID Card)	National Identity Number (ID Card)
+REV	Nationality Country Code	Three character ISO 3166-1 alpha 3 code of the country in which the client has nationality  
+REV	Mobile Phone Number	Primary phone number mobile
+REV	Telephone Number	Telephone Number
+REV	Home Tel Number	Home Tel Number
+REV	Fax Number	Fax Number
+REV	Profession (Job)	Profession (Job)
+REV	Status Indicator	Indicates if cif of client is opened or closed
+REV	UBOAddress	
+REV	ubobirthdate	
+REV	UBO birth Dateconv	
+REV	UBO Country of Birth	
+REV	UBO COUNTRY OF RESIDENCE	
+REV	UBO CRS STATUS	
+REV	UBO CUSTOMER NAME	
+REV	UBO CUSTOMER ID	
+REV	UBO FATCA STATUS	
+REV	UBO Nationality	
+REV	UBO Place of Birth	
+REV	NIPT/NIUS	
+REV	Risk Confirmation Date	
+REV	AMLRisk Classification	Classification of AML Risk
+REV	AMLRisk Classification Date	Date of Classification of AML Risk
+REV	Source Of Income	Source of Income
+REV	Last Transactin Date	Last Transactin Date
+REV	Avgerage Amount Eur	Average Amount of Client in Euro for all Deposits
+REV	Cif Last Update 	Last date of update for the CIF
+REV	Customer Profession	Customer Profession
+REV	RECORDTYPE	ASD Record Type
+REV	FILE_TYPE	ASD File Type 
+REV	SWIFT_CODE	ASD Swift Code
+REV	SURNAME_BEF_MARRIAGE	Last Name before Marriage
+REV	INSURANCE_COV_STATUS	ASD Insurance coverage status
+REV	IDENTIFICATION_DOC	Type of identification document
+REV	ISSUING_ID	
+REV	DIA_RELATED	
+REV	AML_RISK_CLASSIFIC_REASON	
+REV	COUNTRY_OF_ORIGIN	
+REV	DATA_RISHIKIMIT_KYC	
+REV	EXPOSURE_COUNTRY	
+REV	FLAG_RES_NORES	
+REV	OJF_FLAG	
+REV	PERSON_TITLE	
+REV	PLACE_OF_BIRTH	
+REV	STATE_OF_BIRTH	
+REV	USER_AML_RISK_AUTHORIZATION	
+REV	Legal_Name	
+REV	STATE_RES_CRS_1	
+REV	STATE_RES_CRS_2	
+REV	STATE_RES_CRS_3	
+REV	CAR_Pool_Type	
+REV	PARTY_OWNERSHIP_ADDRESS	
+REV	PARTY_OWNERSHIP_COUNTRY	
+REV	PARTY_OWNERSHIP_FIRST_NAME	
+REV	PARTY_OWNERSHIP_LAST_NAME	
+REV	PARTY_OWNERSHIP_TIN_NUMBER	
+REV	TERRITORIAL_CODE	
+REV	Offshore	
+REV	Risk_score	
+REV	relationship	Representative Relationship
+REV	relationship	Customer group relationship
+REV	unique_id_name	Representative ID Type
+REV	E_ADDRESS1	Employment Address
+REV	ACCOUNT OWNER	Account Holder(s)
+REV	POWER OF AUTORNEY REPRESENTANT	Procurator(s)
+REV	DIRECTOR	Director(s)
+REV	Administrator	Administrator(s)
+REV	ac.cust_ac_no (parameter)	Account joint holder names
+REV	counterparty	Trade contract counterparty (customer no)
+REV	auth_stat	Customer authorization status
+REV	checker_dt_stamp	
+REV	cif_status_since	
+REV	credit_rating	Customer credit rating
+REV	organisation_name	
+REV	PERFAQESUESI_LIGJOR	
+REV	maker_id	
+REV	passport_no	Passport Number
+REV	record_stat	RECORD STATUS
+REV	udf_2	CIF_open_date
+REV	udf_3	PRODUCT_CODE
+REV	UDF_4	organization_form
+REV	f.field_val_21	Personal Data Usage Flag
+REV	(function output) customer_no	Director Name/Administrator Name/Authorized Representative
+REV	f.field_val_8	Legal Status Description
+REV	f.field_val_14	Employment Type Description
+REV	f.field_val_31	CRS Country Code
