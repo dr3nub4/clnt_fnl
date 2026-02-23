@@ -1,0 +1,195 @@
+DOMAIN	FIELD NAME (dim_customer)	AMLA	CLNDB	REV	dim_C	into_stg	into_dim
+IDENTIFICATION & CORE IDENTITY	customer_sk				 customer_sk            	N	y
+IDENTIFICATION & CORE IDENTITY	customer_id	client_cecil_id	CLIENT_ID		 customer_id            	y	y
+IDENTIFICATION & CORE IDENTITY	client_id_type			Client ID Type	client_id_type	y	
+IDENTIFICATION & CORE IDENTITY	customer_name		CLIENT_NAME		 customer_name          	y	
+IDENTIFICATION & CORE IDENTITY	customer_type		Client_type	Customer Type	 customer_type          	y	
+IDENTIFICATION & CORE IDENTITY	customer_category_code			CUSTOMER CATEGORY Code	 customer_category_code 	y	
+IDENTIFICATION & CORE IDENTITY	finrep_sector		FINREP_SECTOR	FINREP SECTOR	 finrep_sector          	y	
+IDENTIFICATION & CORE IDENTITY	customer_open_date	client_creation_date	DATE_OF_CLIENT_OPENING	Creation Date	customer_open_date	y	
+IDENTIFICATION & CORE IDENTITY	description		Description	Description	 description            	y	
+IDENTIFICATION & CORE IDENTITY	record_type			RECORDTYPE	 record_type            	y	
+IDENTIFICATION & CORE IDENTITY	file_type			FILE_TYPE	 file_type              	y	
+IDENTIFICATION & CORE IDENTITY	swift_code			SWIFT_CODE		y	
+PERSONAL (RETAIL) PROFILE	gender		CLIENT_GENDER	CLIENT GENDER	 gender                     	y	
+PERSONAL (RETAIL) PROFILE	date_of_birth		YEAR_OF_BIRTH	Date of Birth	 date_of_birth              	y	
+PERSONAL (RETAIL) PROFILE	year_of_birth			YEAR OF BIRTH	 year_of_birth              	y	
+PERSONAL (RETAIL) PROFILE	month_of_birth		MONTH_OF_BIRTH	MONTH OF BIRTH	 month_of_birth             	y	
+PERSONAL (RETAIL) PROFILE	place_of_birth			Birth Town	 place_of_birth             	y	
+PERSONAL (RETAIL) PROFILE	state	state			 state_of_birth             	y	
+PERSONAL (RETAIL) PROFILE	birth_country_code			Birth country code	 birth_country_code         	y	
+PERSONAL (RETAIL) PROFILE	nationality_country_code	nationality			 nationality_country_code   	y	
+PERSONAL (RETAIL) PROFILE	secondary_nationality_code	secondary_nationality		Nationality Country Code	 secondary_nationality_code 	y	
+PERSONAL (RETAIL) PROFILE	 resident_status            				 resident_status            	y	
+PERSONAL (RETAIL) PROFILE	marital_status			Marital status	 marital_status             	y	
+PERSONAL (RETAIL) PROFILE	spouse_name			SPOUSE NAME	 spouse_name                	y	
+PERSONAL (RETAIL) PROFILE	father_name			Father Name	 father_name                	y	
+PERSONAL (RETAIL) PROFILE	education_level			Education level	 education_level            	y	
+PERSONAL (RETAIL) PROFILE	occupation_type		OCCUPATION_TYPE	Occupation Type	 occupation_type            	y	
+PERSONAL (RETAIL) PROFILE	profession			Profession (Job)	 profession                 	y	
+PERSONAL (RETAIL) PROFILE	employment_status		Employment Status	Employment Status	 employment_status          	y	
+PERSONAL (RETAIL) PROFILE	source_of_income			Source Of Income		y	
+PERSONAL (RETAIL) PROFILE	annual_income		ANNUAL_INCOME	ANNUAL INCOME		y	
+PERSONAL (RETAIL) PROFILE	salary_transfer_flag		SALARY_TRANSFER_INDICATOR	SALARY TRANSFER INDICATOR		y	
+PERSONAL (RETAIL) PROFILE	minor_flag				 minor_flag                 	y	
+PERSONAL (RETAIL) PROFILE	deceased_flag			Deceased Status	 deceased_flag              	y	
+PERSONAL (RETAIL) PROFILE	deceased_date	date_of_death		Deceased Date	 deceased_date              	y	
+PERSONAL (RETAIL) PROFILE	person_title			PERSON_TITLE		y	
+PERSONAL (RETAIL) PROFILE	surname_before_marriage			SURNAME_BEF_MARRIAGE		y	
+CORPORATE PROFILE	legal_form	legal_form_type	LEGAL_FORM	LEGAL FORM	 legal_form              	y	
+CORPORATE PROFILE	incorporation_date		Date of incorporation	Creation date of the company	 incorporation_date      	y	
+CORPORATE PROFILE	incorporation_country			Creation country of the company	 incorporation_country   	y	
+CORPORATE PROFILE	nace_code			NACE CODE	 nace_code               	y	
+CORPORATE PROFILE	business_activity       					y	
+CORPORATE PROFILE	business_license_number			Business licence number	 business_license_number 	y	
+CORPORATE PROFILE	nipt_nius			NIPT/NIUS	 nipt_nius               	y	
+CORPORATE PROFILE	lei_code		LEI_CODE	LEI CODE	 lei_code                	y	
+CORPORATE PROFILE	number_of_employees		NUMBER_OF_EMPLOYEES	NUMBER OF EMPLOYEES	 number_of_employees     	y	
+CORPORATE PROFILE	ebitda		EBITDA	EBITDA		y	
+CORPORATE PROFILE	turnover		TURNOVER	TURNOVER		y	
+CORPORATE PROFILE	total_assets		TOTAL_ASSETS	TOTAL ASSETS		y	
+CORPORATE PROFILE	total_equity		TOTAL_EQUITY	TOTAL EQUITY		y	
+CORPORATE PROFILE	organisation_name			organisation_name		y	
+CORPORATE PROFILE	liquidation_indicator		LIQUIDATION_INDICATOR	LIQUIDATION INDICATOR	 liquidation_indicator   	y	
+CORPORATE PROFILE	bankruptcy_indicator		BANKRUPTCY_INDICATOR	BANKRUPTCY INDICATOR	 bankruptcy_indicator    	y	
+CORPORATE PROFILE	prompt_collection_order_flag		PROMPT_COLLECTION_ORDER_INDICATOR	PROMPT COLLECTION ORDER INDICATOR		y	
+CORPORATE PROFILE	consolidation_id		CONSOLIDATION_ID	CONSOLIDATION ID		y	
+CORPORATE PROFILE	foundation_client_flag		FOUNDATION_CLIENT	FOUNDATION CLIENT		y	
+CORPORATE PROFILE	esg_risk_category		ESG_CLIENT_RISK_CATEGORY	ESG CLIENT RISK CATEGORY		y	
+ADDRESS & CONTACT	address_line1			Address Part1	 address_line1               	y	
+ADDRESS & CONTACT	address_line2			Address Part2	 address_line2               	y	
+ADDRESS & CONTACT	address_line3			Address Part3	 address_line3               	y	
+ADDRESS & CONTACT	address_line4			Address Part4	 address_line4               	y	
+ADDRESS & CONTACT	postal_code		REGISTERED_CITY_POSTAL_CODE	REGISTERED CITY POSTAL CODE	 postal_code                 	y	
+ADDRESS & CONTACT	country_of_residence			CLIENT COUNTRY RESIDENCE CODE	 country_of_residence        	y	
+ADDRESS & CONTACT	address_type				 correspondence_address_type 	y	
+ADDRESS & CONTACT	country_of_address	country_of_address	CLIENT_COUNTRY_CODE		 country_of_address          	y	
+ADDRESS & CONTACT	virtual_office_flag	virtual_office			virtual_office_flag         	y	
+ADDRESS & CONTACT	email_address			Email address	 email_address               	y	
+ADDRESS & CONTACT	mobile_phone_number			Mobile Phone Number	 mobile_phone_number         	y	
+ADDRESS & CONTACT	telephone_number			Telephone Number	 telephone_number            	y	
+ADDRESS & CONTACT	home_phone_number			Home Tel Number	 home_phone_number           	y	
+ADDRESS & CONTACT	language				 language                    	y	
+DIGITAL & SERVICE ENABLEMENT	internet_banking_contract_flag		INTERNETBANK_CONTRACT_INDICATOR	INTERNETBANK CONTRACT INDICATOR	 internet_banking_contract_flag 	y	
+DIGITAL & SERVICE ENABLEMENT	internet_banking_onboarding_flag		INTERNETBANK_ONBOARDING_INDICATOR	INTERNETBANK ONBOARDING INDICATOR		y	
+DIGITAL & SERVICE ENABLEMENT	internet_banking_activity_flag		INTERNTEBANK_ACTIVITY_INDICATOR	INTERNETBANK TRANSACTION INDICATOR	 internet_banking_activity_flag 	y	
+DIGITAL & SERVICE ENABLEMENT	internet_banking_transaction_flag		INTERNETBANK_TRANSACTION_INDICATOR	INTERNTEBANK ACTIVITY INDICATOR		y	
+DIGITAL & SERVICE ENABLEMENT	mobile_banking_service_flag		MOBILE_BANK_SERVICE_INDICATOR	MOBILE BANK SERVICE INDICATOR	 mobile_banking_service_flag    	y	
+DIGITAL & SERVICE ENABLEMENT	mobile_banking_activation_flag		MOBILE_BANK_ACTIVATION_INDICATOR	MOBILE BANK ACTIVATION INDICATOR		y	
+DIGITAL & SERVICE ENABLEMENT	mobile_banking_activity_flag		MOBILE_BANK_ACTIVITY_INDICATOR	MOBILE BANK ACTIVITY INDICATOR	 mobile_banking_activity_flag   	y	
+DIGITAL & SERVICE ENABLEMENT	mobile_banking_transaction_flag		MOBILE_BANK_TRANSACTION_INDICATOR	MOBILE BANK TRANSACTION INDICATOR		y	
+DIGITAL & SERVICE ENABLEMENT	call_center_service_flag		CALL_CENTER_SERVICE_INDICATOR	CALL CENTER SERVICE INDICATOR	 call_center_service_flag       	y	
+DIGITAL & SERVICE ENABLEMENT	sms_control_service_flag		CONTROLL_SMS_SERVICE_INDICATOR	CONTROLL SMS SERVICE INDICATOR	 sms_control_service_flag       	y	
+DIGITAL & SERVICE ENABLEMENT	pos_terminal_service_flag		POS_TERMINAL_SERVICE_INDICATOR	POS TERMINAL SERVICE INDICATOR	 pos_terminal_service_flag      	y	
+GROUPING & SEGMENTATION	customer_segment	segment			 customer_segment        	y	
+GROUPING & SEGMENTATION	business_segment_code		CLIENT_BUSINESS_SEGMENT	CLIENT BUSINESS SEGMENT	 business_segment_code        	y	
+GROUPING & SEGMENTATION	basel_segment		CLIENT_BASEL_SEGMENT	CLIENT BASEL SEGMENT		y	
+GROUPING & SEGMENTATION	boa_main_client_type_code				OBA_MainClient_Type_Code	y	
+GROUPING & SEGMENTATION	boa_client_type_code				OBA_Client_Type_Code	y	
+GROUPING & SEGMENTATION	boa_sub_client_type_code				OBA_SubClient_Type_Code	y	
+GROUPING & SEGMENTATION	local_client_group_id			LOCAL CLIENT GROUP ID	 local_client_group_id   	y	
+GROUPING & SEGMENTATION	local_client_group_name			LOCAL CLIENT GROUP NAME	 local_client_group_name 	y	
+GROUPING & SEGMENTATION	local_client_group_limit			LOCAL CLIENT GROUP LIMIT		y	
+GROUPING & SEGMENTATION	local_client_group_limit_end_date			LOCAL CLIENT GROUP LIMIT END DATE		y	
+GROUPING & SEGMENTATION	local_grouping_criteria			LOCAL GROUPING CRITERIA		y	
+GROUPING & SEGMENTATION	number_of_bundle_products		NUMBER_OF_BUNDLE_PRODUCT	NUMBER OF BUNDLE PRODUCT		y	
+GROUPING & SEGMENTATION	individual_assessment_flag		INDIVIDUAL_ASSESSMENT_INDICATOR	INDIVIDUAL ASSESSMENT INDICATOR		y	
+AML & RISK	aml_risk_classification	risk_category		AMLClient Risk	 aml_risk_classification      	y	
+AML & RISK	aml_risk_classification_date			AMLRisk Classification Date	 risk_confirmation_date       	y	
+AML & RISK	aml_risk_score	risk_score		Risk_score	 aml_risk_score               	y	
+AML & RISK	risk_confirmation_date			Risk Confirmation Date		y	
+AML & RISK	aml_risk_valid_user_code			AML Risk Valid User Code		y	
+AML & RISK	aml_risk_create_user_code			AML Risk Create User Code		y	
+AML & RISK	pep_flag	PEP		PEP Client Indicator	pep_flag	y	
+AML & RISK	pep_type			PEP Client		y	
+AML & RISK	fatf_flag	aml_fatf_flag				y	
+AML & RISK	offshore_flag	offshore		Offshore	 offshore_flag              	y	
+AML & RISK	relevant_customer_flag	relevant_customer				y	
+AML & RISK	active_aml_customer_flag					y	
+AML & RISK	sof_verification_flag					y	
+AML & RISK	reported_flag					y	
+AML & RISK	offboarding_date	offboarding_date				y	
+AML & RISK	offboarding_type	offboarding_type				y	
+AML & RISK	offboarding_initiator	offboarding_initiator				y	
+AML & RISK	reason_for_offboarding	reason_for_offboarding				y	
+AML & RISK	masking_date	masking_date				y	
+AML & RISK	aml_client_role_type	aml_client_role_type				y	
+AML & RISK	third_party_relation_type	third_party				y	
+AML & RISK	aml_risk_classific_reason			AML_RISK_CLASSIFIC_REASON		y	
+KYC	kyc_risk_score	kyc_risk_score			 kyc_risk_score               	y	
+KYC	kyc_questionnaire_flag	KYC_questionnaire_fl			 kyc_questionnaire_flag            	y	
+KYC	kyc_questionnaire_type	KYC_questionnaire_type			 kyc_questionnaire_type            	y	
+KYC	kyc_questionnaire_open_date	KYC_questionnaire_open_date			 kyc_questionnaire_open_date       	y	
+KYC	kyc_questionnaire_completion_date	KYC_questionnaire_compl_date			 kyc_questionnaire_completion_date 	y	
+KYC	kyc_questionnaire_status	KYC_questionnaire_status			 kyc_questionnaire_status          	y	
+KYC	kyc_questionnaire_substatus	KYC_questionnaire_substatus			 kyc_questionnaire_substatus       	y	
+KYC	kyc_review_date				 date_of_periodic_review           	y	
+KYC	kyc_review_due_date			DATA_RISHIKIMIT_KYC	 due_date_of_periodic_review       	y	
+KYC	kyc_review_admin_id				 admin_of_periodic_review          	y	
+TAX & CRS	tax_identification_number		TAX_IDENTIFICATION_NUMBER	TAX IDENTIFICATION NUMBER	 tax_identification_number   	y	
+TAX & CRS	tax_identification_number_1			TAXIDENTNO1	 tax_identification_number_1 	y	
+TAX & CRS	tax_identification_number_2			TAXIDENTNO2	 tax_identification_number_2 	y	
+TAX & CRS	tax_identification_number_3			TAXIDENTNO3	 tax_identification_number_3 	y	
+TAX & CRS	fatca_status			Fatca Status	 fatca_status                	y	
+TAX & CRS	crs_status				 crs_status                  	y	
+TAX & CRS	state_res_crs_1			STATE_RES_CRS_1	 state_res_crs_1             	y	
+TAX & CRS	state_res_crs_2			STATE_RES_CRS_2	 state_res_crs_2             	y	
+TAX & CRS	state_res_crs_3			STATE_RES_CRS_3	 state_res_crs_3             	y	
+COUNTRY RISK	fatf_country_flag	fatf_country_flag			 fatf_country_flag          	y	
+COUNTRY RISK	high_risk_country_flag	aml_high_risk_country_flag			 high_risk_country_flag     	y	
+COUNTRY RISK	residential_risk_country	residential_risk				y	
+COUNTRY RISK	correspondent_banking_risk	correspondent_banking_risk			 correspondent_banking_risk 	y	
+COUNTRY RISK	exposure_country			EXPOSURE_COUNTRY	 exposure_country           	y	
+COUNTRY RISK	country_of_origin			COUNTRY_OF_ORIGIN		y	
+COUNTRY RISK	ojf_flag					y	
+CREDIT RISK	credit_rating			credit_rating	 credit_rating              	y	
+CREDIT RISK	fitch_rating		FITCH_RATING	FITCH RATING	 fitch_rating               	y	
+CREDIT RISK	moodys_rating		MOODYS_RATING		 moodys_rating              	y	
+CREDIT RISK	standard_poors_rating		STANDARD_AND_POORS_RATING	STANDARD AND POORS RATING	 standard_poors_rating      	y	
+CREDIT RISK	non_retail_client_limit		NON_RETAIL_CLIENT_LIMIT			y	
+CREDIT RISK	non_retail_client_limit_currency		NON_RETAIL_CLIENT_LIMIT_CURRENCY			y	
+CREDIT RISK	local_client_group_limit					y	
+STATUS & LIFECYCLE	branch_creation_code			Branch Creation Code		y	
+STATUS & LIFECYCLE	branch_managing_code					y	
+STATUS & LIFECYCLE	crm_managing_code					y	
+STATUS & LIFECYCLE	bic_code				bic_code	y	
+STATUS & LIFECYCLE	client_status	client_status				y	
+STATUS & LIFECYCLE	cif_status			Status Indicator	 cif_status                  	y	
+STATUS & LIFECYCLE	cif_status_since			cif_status_since	 cif_status_since            	y	
+STATUS & LIFECYCLE	contract_id	contract_id				y	
+STATUS & LIFECYCLE	contract_status					y	
+STATUS & LIFECYCLE	contract_creation_date					y	
+STATUS & LIFECYCLE	active_customer_flag	active_cust		active	active_customer_flag        	y	
+STATUS & LIFECYCLE	transactional_activity_flag		TRANSACTIONAL_ACTIVITY_INDICATOR	TRANSACTIONAL ACTIVITY INDICATOR	6M_ transactional_activity_flag 	y	
+STATUS & LIFECYCLE	last_transaction_date			Last Transactin Date	 last_transaction_date       	y	
+STATUS & LIFECYCLE	frozen_flag				 frozen_flag                 	y	
+STATUS & LIFECYCLE	cif_last_update_date			Cif Last Update 		y	
+STATUS & LIFECYCLE	average_deposit_amount_eur			Avgerage Amount Eur		y	
+IDENTIFICATION DOCUMENTS	identification_doc_type			IDENTIFICATION_DOC	 identification_doc_type              	y	
+IDENTIFICATION DOCUMENTS	identification_doc_id			ISSUING_ID	 identification_doc_id                	y	
+IDENTIFICATION DOCUMENTS	 identification_doc_issue_date        				 identification_doc_issue_date        	y	
+IDENTIFICATION DOCUMENTS	 identification_doc_expiry_date       				 identification_doc_expiry_date       	y	
+IDENTIFICATION DOCUMENTS	 identification_doc_issuing_authority 				 identification_doc_issuing_authority 	y	
+IDENTIFICATION DOCUMENTS	 identification_doc_place_of_issue    				 identification_doc_place_of_issue    	y	
+IDENTIFICATION DOCUMENTS	passport_number			passport_no	 passport_number                      	y	
+IDENTIFICATION DOCUMENTS	national_identity_number			National Identity Number (ID Card)	 national_identity_number             	y	
+IDENTIFICATION DOCUMENTS	pre_filtering_result_type		PRE_FILTERING_RESULT_TYPE	PRE FILTERING RESULT TYPE		y	
+IDENTIFICATION DOCUMENTS	ssn				ssn	y	
+IDENTIFICATION DOCUMENTS	insurance_coverage_status					y	
+IDENTIFICATION DOCUMENTS	dia_related_flag			DIA_RELATED		y	
+TECHNICAL / SCD	source_system					N	y
+TECHNICAL / SCD	auth_status			auth_stat		y	y
+TECHNICAL / SCD	user_record_creation			Crm Creation Code	user_customer_record_creation         	y	y
+TECHNICAL / SCD	record_creation_date				customer_record_date_creation	y	y
+TECHNICAL / SCD	user_record_authorization	client_creation_date	DATE_OF_CLIENT_OPENING	Date of Verification for Personal Details	user_customer_record_authorization	y	y
+TECHNICAL / SCD	record_authorization_date			checker_dt_stamp	customer_record_authorization_date	y	y
+TECHNICAL / SCD	user_record_modification				user_customer_record_modification	y	y
+TECHNICAL / SCD	record_modification_date		DATE_OF_VERIFICATION_FOR_PERSONAL_DETAILS		customer_record_date_modification	y	y
+TECHNICAL / SCD	auth_user_record_modification				user_customer_record_auth_mod	y	y
+TECHNICAL / SCD	auth_record_modification_date				customer_record_date_auth_mod	y	y
+TECHNICAL / SCD	mod_no				 mod_no               	Y	y
+TECHNICAL / SCD	is_current				 is_current           	N	y
+TECHNICAL / SCD	effective_from				 effective_from       	N	y
+TECHNICAL / SCD	effective_to				 effective_to         	N	y
+TECHNICAL / SCD	record_insert_ts				 record_insert_ts     	N	y
+TECHNICAL / SCD	record_update_ts				 record_update_ts     	N	y
